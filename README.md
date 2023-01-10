@@ -10,8 +10,8 @@ has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 <!-- badges: end -->
 
-An R package to interface with to [the PokéAPI
-database](https://pokeapi.co/), based on
+An R package to interface with [the PokéAPI
+service](https://pokeapi.co/), based on
 [{httr2}](https://httr2.r-lib.org/).
 
 Why ‘Trapinch’? Because [it’s a
