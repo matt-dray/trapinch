@@ -1,0 +1,61 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+
+library(trapinch)
+```
+
+# {trapinch}
+
+<!-- badges: start -->
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+<!-- badges: end -->
+
+An R package to interface with to [the PokéAPI database](https://pokeapi.co/), based on [{httr2}](https://httr2.r-lib.org/).
+
+Why 'Trapinch'? Because [it's a Pokémon](https://bulbapedia.bulbagarden.net/wiki/Trapinch_(Pok%C3%A9mon)) whose name contains 'R API' and it wasn't claimed on [Repokemon](https://cheeaun.github.io/repokemon/) yet, lol.
+
+## Installation
+
+You can install {trapinch} from GitHub with help from [{remotes}](https://remotes.r-lib.org/):
+
+```{r install, eval=FALSE}
+if (!require(remotes)) install.packages("remotes")
+remotes::install_github("matt-dray/trapinch")
+```
+
+## Example
+
+Functions are all prefaced `get_*()` and return a list.
+
+For example, retrieve a named Pokémon's details:
+
+```{r example-pokemon}
+bulba <- trapinch::get_pokemon("bulbasaur")
+bulba$moves[[1]]$move$name
+```
+
+Another is example is to retrieve an item's details:
+
+```{r example-item}
+ball <- trapinch::get_item("poke-ball")
+ball$flavor_text_entries[[1]]$text
+```
+
+# Expectations
+
+I'm developing {trapinch} to familiarise myself with {httr2}, API handling and unit testing of functions that talk to the internet. Expect a lot of change, but it might not get updated much or often.
+
+# Similar projects
+
+Wrappers in several languages are named on [the PokéAPI website](https://pokeapi.co/docs/v2#wrap). None of these are for R, although I'm aware of [{pokedex} from UBC-MDS](https://github.com/UBC-MDS/pokedex) (not on CRAN).
