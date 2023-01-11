@@ -16,13 +16,49 @@
 #' @export
 #'
 #' @examples \dontrun{get_pokeapi("pokemon", "bulbasaur")}
-get_pokeapi <- function(
-    endpoint = "pokemon",
-    resource = "trapinch",
-    ext = NULL
-) {
+get_pokeapi <- function(endpoint, resource, ext = NULL) {
+
+  .check_internet()
+
+  if (!is.character(endpoint)) {
+    stop("Argument 'endpoint' must be a string.", call. = FALSE)
+  }
+
+  if (!is.character(resource)) {
+
+    if (
+      endpoint %in% c(
+        "contest-effect", "evolution-chain", "machine", "characteristic"
+      )
+    ) {
+      stop(
+        "Argument 'resource' must be a numeric value.",
+        call. = FALSE
+      )
+    } else {
+      stop(
+        "Argument 'resource' must be a string.",
+        call. = FALSE
+      )
+    }
+  }
+
+  if (!is.null(ext) && !is.character(ext)) {
+    stop(
+      "Argument 'ext' can only be 'encounters' when 'endpoint' is 'pokemon'.",
+      call. = FALSE
+    )
+  }
+
+  if (!is.null(ext) && (endpoint == "type" & ext != "encounters")) {
+    stop(
+      "Argument 'ext' can only be 'encounters' when 'endpoint' is 'type'.",
+      call. = FALSE
+    )
+  }
 
   httr2::request("https://pokeapi.co/api/v2/") |>
+    # httr2::req_cache(tempdir(), debug = TRUE) |>
     httr2::req_url_path_append(endpoint, resource, ext) |>
     httr2::req_user_agent("trapinch (http://github.com/matt-dray/trapinch)") |>
     httr2::req_perform() |>
@@ -397,12 +433,12 @@ get_pokemon <- function(resource) {
   get_pokeapi("pokemon", resource)
 }
 
-#' Get Data from PokeAPI: Pokemon Encounters
+#' Get Data from PokeAPI: Pokemon Location Areas
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_pokemon_encounters("bulbasaur")}
-get_pokemon_encounters  <- function(resource) {
-  get_pokeapi("type", resource, "encounters")
+get_pokemon_location_areas  <- function(resource) {
+  get_pokeapi("pokemon", resource, "encounters")
 }
 
 #' Get Data from PokeAPI: Pokemon Colors
