@@ -7,7 +7,7 @@
 PokéAPI \url{https://pokeapi.co/}.
 }
 \usage{
-get_pokeapi(endpoint = "pokemon", resource = "trapinch", ext = NULL)
+get_pokeapi(endpoint, resource, ext = NULL)
 }
 \arguments{
 \item{endpoint}{Character. The name of the endpoint to query, such as

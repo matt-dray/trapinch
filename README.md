@@ -8,6 +8,9 @@
 [![Project Status: WIP – Initial development is in progress, but there
 has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![R-CMD-check](https://github.com/matt-dray/trapinch/workflows/R-CMD-check/badge.svg)](https://github.com/matt-dray/trapinch/actions)
+[![Codecov test
+coverage](https://codecov.io/gh/matt-dray/trapinch/branch/main/graph/badge.svg)](https://app.codecov.io/gh/matt-dray/trapinch?branch=main)
 <!-- badges: end -->
 
 An R package to interface with [the PokéAPI
@@ -61,3 +64,10 @@ Wrappers in several languages are named on [the PokéAPI
 website](https://pokeapi.co/docs/v2#wrap). None of these are for R,
 although I’m aware of [{pokedex} from
 UBC-MDS](https://github.com/UBC-MDS/pokedex) (not on CRAN).
+
+# Thanks
+
+This package was made easier with help from [the PokéAPI
+documentation](https://pokeapi.co/docs/v2), [the {httr2}
+documentation](https://httr2.r-lib.org/index.html) and [Colin Fay’s
+post](https://colinfay.me/build-api-wrapper-package-r/).
