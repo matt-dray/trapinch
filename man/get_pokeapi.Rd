@@ -18,7 +18,7 @@ from the named endpoint.}
 
 \item{ext}{Character. Only needed for Pokémon encounters.}
 
-\item{request}{Logical. Show extra output when request is performed? Defaults
+\item{verbose}{Logical. Show extra output when request is performed? Defaults
 to \code{FALSE}.}
 }
 \value{

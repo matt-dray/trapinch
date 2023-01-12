@@ -6,7 +6,7 @@
 #' @param resource Character or numeric. The name or ID of the item to return
 #'     from the named endpoint.
 #' @param ext Character. Only needed for Pokémon encounters.
-#' @param request Logical. Show extra output when request is performed? Defaults
+#' @param verbose Logical. Show extra output when request is performed? Defaults
 #'     to \code{FALSE}.
 #'
 #' @details See \href{https://pokeapi.co/docs/v2#berries}{the API documentation}.
