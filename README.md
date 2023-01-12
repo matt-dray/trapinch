@@ -90,27 +90,27 @@ And an example resource table for Pokémon types:
 
 ``` r
 trapinch::resource_lookups[["type"]]
-#>    id     name                                   url
-#> 1   1   normal     https://pokeapi.co/api/v2/type/1/
-#> 2   2 fighting     https://pokeapi.co/api/v2/type/2/
-#> 3   3   flying     https://pokeapi.co/api/v2/type/3/
-#> 4   4   poison     https://pokeapi.co/api/v2/type/4/
-#> 5   5   ground     https://pokeapi.co/api/v2/type/5/
-#> 6   6     rock     https://pokeapi.co/api/v2/type/6/
-#> 7   7      bug     https://pokeapi.co/api/v2/type/7/
-#> 8   8    ghost     https://pokeapi.co/api/v2/type/8/
-#> 9   9    steel     https://pokeapi.co/api/v2/type/9/
-#> 10 10     fire    https://pokeapi.co/api/v2/type/10/
-#> 11 11    water    https://pokeapi.co/api/v2/type/11/
-#> 12 12    grass    https://pokeapi.co/api/v2/type/12/
-#> 13 13 electric    https://pokeapi.co/api/v2/type/13/
-#> 14 14  psychic    https://pokeapi.co/api/v2/type/14/
-#> 15 15      ice    https://pokeapi.co/api/v2/type/15/
-#> 16 16   dragon    https://pokeapi.co/api/v2/type/16/
-#> 17 17     dark    https://pokeapi.co/api/v2/type/17/
-#> 18 18    fairy    https://pokeapi.co/api/v2/type/18/
-#> 19 19  unknown https://pokeapi.co/api/v2/type/10001/
-#> 20 20   shadow https://pokeapi.co/api/v2/type/10002/
+#>       id     name                                   url
+#> 1      1   normal     https://pokeapi.co/api/v2/type/1/
+#> 2      2 fighting     https://pokeapi.co/api/v2/type/2/
+#> 3      3   flying     https://pokeapi.co/api/v2/type/3/
+#> 4      4   poison     https://pokeapi.co/api/v2/type/4/
+#> 5      5   ground     https://pokeapi.co/api/v2/type/5/
+#> 6      6     rock     https://pokeapi.co/api/v2/type/6/
+#> 7      7      bug     https://pokeapi.co/api/v2/type/7/
+#> 8      8    ghost     https://pokeapi.co/api/v2/type/8/
+#> 9      9    steel     https://pokeapi.co/api/v2/type/9/
+#> 10    10     fire    https://pokeapi.co/api/v2/type/10/
+#> 11    11    water    https://pokeapi.co/api/v2/type/11/
+#> 12    12    grass    https://pokeapi.co/api/v2/type/12/
+#> 13    13 electric    https://pokeapi.co/api/v2/type/13/
+#> 14    14  psychic    https://pokeapi.co/api/v2/type/14/
+#> 15    15      ice    https://pokeapi.co/api/v2/type/15/
+#> 16    16   dragon    https://pokeapi.co/api/v2/type/16/
+#> 17    17     dark    https://pokeapi.co/api/v2/type/17/
+#> 18    18    fairy    https://pokeapi.co/api/v2/type/18/
+#> 19 10001  unknown https://pokeapi.co/api/v2/type/10001/
+#> 20 10002   shadow https://pokeapi.co/api/v2/type/10002/
 ```
 
 # Expectations
