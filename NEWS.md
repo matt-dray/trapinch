@@ -6,4 +6,4 @@
 * Added basic tests on error.
 * Added GitHub Actions for check and tests.
 * Added hex.
-* Added `resource_lookup` data.
+* Added `resource_lookup` data and checks.

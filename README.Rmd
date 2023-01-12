@@ -54,6 +54,18 @@ ball <- trapinch::get_item("poke-ball")
 ball$flavor_text_entries[[1]]$text
 ```
 
+If you're wondering what endpoints and resources exist, you can find them in the `resource_lookups` list object. The endpoints:
+
+```{r endpoints}
+names(resource_lookups)
+```
+
+And an example resource table:
+
+```{r resource}
+resource_lookups[["type"]]
+```
+
 # Expectations
 
 I'm developing {trapinch} to familiarise myself with {httr2}, API handling and unit testing of functions that talk to the internet. Expect a lot of change, but it might not get updated much or often.
