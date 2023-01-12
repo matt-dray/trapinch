@@ -4,7 +4,7 @@
   }
 }
 
-.check_args <- function(endpoint, resource, ext) {
+.check_args <- function(endpoint, resource, ext, verbose) {
 
   if (!is.character(endpoint)) {
     stop("Argument 'endpoint' must be a string.", call. = FALSE)
@@ -49,8 +49,42 @@
 
 }
 
-.check_resource <- function(resource) {
+.check_resource_exists <- function(endpoint, resource) {
 
+  endpoint_table <- trapinch::resource_lookups[[endpoint]]
 
+  if (is.numeric(resource)) {
+
+    if (!resource %in% endpoint_table[["id"]]) {
+      stop(
+        "The resource ID you provided, '",
+        resource,
+        "' is not valid for the endpoint '",
+        endpoint,
+        "'. See resource_lookups[['",
+        endpoint,
+        "']] for details.",
+        call. = FALSE
+      )
+    }
+
+  }
+
+  if (is.character(resource)) {
+
+    if (!resource %in% endpoint_table[["name"]]) {
+      stop(
+        "The resource name you provided, '",
+        resource,
+        "' is not valid for the endpoint '",
+        endpoint,
+        "'. See resource_lookups[['",
+        endpoint,
+        "']] for details.",
+        call. = FALSE
+      )
+    }
+  }
 
 }
+

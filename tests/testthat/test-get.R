@@ -27,3 +27,8 @@ test_that("argument 'verbose' errors", {
   expect_error(get_pokeapi(endpoint = "pokemon", resource = "ditto", verbose = NULL))
   expect_error(get_pokeapi(endpoint = "pokemon", resource = "ditto", verbose = NA_character_))
 })
+
+test_that("non-existent resource errors", {
+  expect_error(get_pokeapi(endpoint = "berry", resource = Inf))
+  expect_error(get_pokeapi(endpoint = "berry", resource = "x"))
+})

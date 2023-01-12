@@ -22,6 +22,7 @@ get_pokeapi <- function(endpoint, resource, ext = NULL, verbose = FALSE) {
 
   .check_internet()
   .check_args(endpoint, resource, ext, verbose)
+  .check_resource_exists(endpoint, resource)
 
   request <- httr2::request("https://pokeapi.co/api/v2/") |>
     httr2::req_url_path_append(endpoint, resource, ext)
