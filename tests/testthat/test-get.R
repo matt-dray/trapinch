@@ -6,7 +6,7 @@ test_that("argument 'endpoint' errors", {
 
 test_that("argument 'resource' errors", {
 
-  expect_error(get_pokeapi(endpoint = "pokemon", resource = 1))
+  expect_error(get_pokeapi(endpoint = "pokemon", resource = "x"))
   expect_error(get_pokeapi(endpoint = "pokemon", resource = NULL))
   expect_error(get_pokeapi(endpoint = "pokemon", resource = NA_character_))
 
