@@ -34,7 +34,10 @@ remotes::install_github("matt-dray/trapinch")
 
 ## Example
 
-Functions are all prefaced `get_*()` and return a list.
+Functions are all prefaced `get_*()` and return a list. The generic
+request function is `get_pokeapi()`, to which you can provide an
+`endpoint` and `resource` of interest. Each endpoint also has its own
+function to which you need only supply the resource of interest.
 
 For example, retrieve a named Pokémon’s details:
 
@@ -44,7 +47,7 @@ bulba$moves[[1]]$move$name
 #> [1] "razor-wind"
 ```
 
-Another is example is to retrieve an item’s details:
+Or retrieve an item’s details:
 
 ``` r
 ball <- trapinch::get_item("poke-ball")
@@ -56,7 +59,7 @@ If you’re wondering what endpoints and resources exist, you can find
 them in the `resource_lookups` list object. The endpoints:
 
 ``` r
-names(resource_lookups)
+names(trapinch::resource_lookups)
 #>  [1] "berry"                     "berry-firmness"           
 #>  [3] "berry-flavor"              "contest-type"             
 #>  [5] "contest-effect"            "super-contest-effect"     
@@ -83,10 +86,10 @@ names(resource_lookups)
 #> [47] "type"                      "language"
 ```
 
-And an example resource table:
+And an example resource table for Pokémon types:
 
 ``` r
-resource_lookups[["type"]]
+trapinch::resource_lookups[["type"]]
 #>    id     name                                   url
 #> 1   1   normal     https://pokeapi.co/api/v2/type/1/
 #> 2   2 fighting     https://pokeapi.co/api/v2/type/2/
