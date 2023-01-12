@@ -14,7 +14,7 @@ get_move_category(resource)
 from the named endpoint.}
 }
 \value{
-A nested list.
+A (usually-) nested list.
 }
 \description{
 Get Data from PokeAPI: Move Categories

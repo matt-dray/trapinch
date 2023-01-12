@@ -7,7 +7,7 @@
 PokéAPI \url{https://pokeapi.co/}.
 }
 \usage{
-get_pokeapi(endpoint, resource, ext = NULL)
+get_pokeapi(endpoint, resource, ext = NULL, verbose = FALSE)
 }
 \arguments{
 \item{endpoint}{Character. The name of the endpoint to query, such as
@@ -17,9 +17,12 @@ get_pokeapi(endpoint, resource, ext = NULL)
 from the named endpoint.}
 
 \item{ext}{Character. Only needed for Pokémon encounters.}
+
+\item{request}{Logical. Show extra output when request is performed? Defaults
+to \code{FALSE}.}
 }
 \value{
-A nested list.
+A (usually-) nested list.
 }
 \description{
 Get Data from the PokéAPI Service

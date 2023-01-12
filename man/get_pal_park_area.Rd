@@ -14,7 +14,7 @@ get_pal_park_area(resource)
 from the named endpoint.}
 }
 \value{
-A nested list.
+A (usually-) nested list.
 }
 \description{
 Get Data from PokeAPI: Pal Park Areas

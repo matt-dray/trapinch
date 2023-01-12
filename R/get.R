@@ -6,60 +6,31 @@
 #' @param resource Character or numeric. The name or ID of the item to return
 #'     from the named endpoint.
 #' @param ext Character. Only needed for Pokémon encounters.
+#' @param request Logical. Show extra output when request is performed? Defaults
+#'     to \code{FALSE}.
 #'
 #' @details See \href{https://pokeapi.co/docs/v2#berries}{the API documentation}.
 #'
-#' @return A nested list.
+#' @return A (usually-) nested list.
 #'
 #' @source PokéAPI <https://pokeapi.co/>.
 #'
 #' @export
 #'
 #' @examples \dontrun{get_pokeapi("pokemon", "bulbasaur")}
-get_pokeapi <- function(endpoint, resource, ext = NULL) {
+get_pokeapi <- function(endpoint, resource, ext = NULL, verbose = FALSE) {
 
   .check_internet()
+  .check_args(endpoint, resource, ext, verbose)
 
-  if (!is.character(endpoint)) {
-    stop("Argument 'endpoint' must be a string.", call. = FALSE)
+  request <- httr2::request("https://pokeapi.co/api/v2/") |>
+    httr2::req_url_path_append(endpoint, resource, ext)
+
+  if (verbose) {
+    request <- httr2::req_verbose()
   }
 
-  if (!is.character(resource)) {
-
-    if (
-      endpoint %in% c(
-        "contest-effect", "evolution-chain", "machine", "characteristic"
-      )
-    ) {
-      stop(
-        "Argument 'resource' must be a numeric value.",
-        call. = FALSE
-      )
-    } else {
-      stop(
-        "Argument 'resource' must be a string.",
-        call. = FALSE
-      )
-    }
-  }
-
-  if (!is.null(ext) && !is.character(ext)) {
-    stop(
-      "Argument 'ext' can only be 'encounters' when 'endpoint' is 'pokemon'.",
-      call. = FALSE
-    )
-  }
-
-  if (!is.null(ext) && (endpoint == "type" & ext != "encounters")) {
-    stop(
-      "Argument 'ext' can only be 'encounters' when 'endpoint' is 'type'.",
-      call. = FALSE
-    )
-  }
-
-  httr2::request("https://pokeapi.co/api/v2/") |>
-    # httr2::req_cache(tempdir(), debug = TRUE) |>
-    httr2::req_url_path_append(endpoint, resource, ext) |>
+  request |>
     httr2::req_user_agent("trapinch (http://github.com/matt-dray/trapinch)") |>
     httr2::req_perform() |>
     httr2::resp_body_json()

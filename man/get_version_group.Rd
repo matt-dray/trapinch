@@ -14,7 +14,7 @@ get_version_group(resource)
 from the named endpoint.}
 }
 \value{
-A nested list.
+A (usually-) nested list.
 }
 \description{
 Get Data from PokeAPI: Version Groups

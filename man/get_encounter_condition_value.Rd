@@ -14,7 +14,7 @@ get_encounter_condition_value(resource)
 from the named endpoint.}
 }
 \value{
-A nested list.
+A (usually-) nested list.
 }
 \description{
 Get Data from PokeAPI: Encounter Condition Values
