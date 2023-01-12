@@ -14,7 +14,7 @@ get_move_learn_method(resource)
 from the named endpoint.}
 }
 \value{
-A nested list.
+A (usually-) nested list.
 }
 \description{
 Get Data from PokeAPI: Move Learn Methods

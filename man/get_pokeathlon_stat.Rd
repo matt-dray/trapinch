@@ -14,7 +14,7 @@ get_pokeathlon_stat(resource)
 from the named endpoint.}
 }
 \value{
-A nested list.
+A (usually-) nested list.
 }
 \description{
 Get Data from PokeAPI: Pokeathlon Stats

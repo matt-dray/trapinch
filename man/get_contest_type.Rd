@@ -14,7 +14,7 @@ get_contest_type(resource)
 from the named endpoint.}
 }
 \value{
-A nested list.
+A (usually-) nested list.
 }
 \description{
 Get Data from PokeAPI: Contest Types

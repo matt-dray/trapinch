@@ -14,7 +14,7 @@ get_egg_group(resource)
 from the named endpoint.}
 }
 \value{
-A nested list.
+A (usually-) nested list.
 }
 \description{
 Get Data from PokeAPI: Egg Groups

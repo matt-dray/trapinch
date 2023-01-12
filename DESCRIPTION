@@ -3,8 +3,9 @@ Title: Get Data from the PokéAPI Service
 Version: 0.0.0.9000
 Authors@R: 
     person("Matt", "Dray", , "mwdray@gmail.com", role = c("aut", "cre"))
-Description: Query the PokéAPI <https://pokeapi.co/> to return information about 
-    the Pokemon game franchise, including moves, berries, items, locations, etc.
+Description: Query the RESTful PokéAPI <https://pokeapi.co/> to return 
+    information about the Pokemon game franchise, including moves, berries,
+    items, locations, etc.
 License: MIT + file LICENSE
 URL: https://github.com/matt-dray/trapinch
 BugReports: https://github.com/matt-dray/trapinch/issues
@@ -18,3 +19,6 @@ Suggests:
     covr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)
+LazyData: true

@@ -6,7 +6,9 @@
 \alias{trapinch-package}
 \title{trapinch: Get Data from the PokéAPI Service}
 \description{
-Query the PokéAPI <https://pokeapi.co/> to return information about the Pokemon game franchise, including moves, berries, items, locations, etc.
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+
+Query the RESTful PokéAPI <https://pokeapi.co/> to return information about the Pokemon game franchise, including moves, berries, items, locations, etc.
 }
 \seealso{
 Useful links:

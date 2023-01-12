@@ -14,7 +14,7 @@ get_item_fling_effect(resource)
 from the named endpoint.}
 }
 \value{
-A nested list.
+A (usually-) nested list.
 }
 \description{
 Get Data from PokeAPI: Item Fling Effects
