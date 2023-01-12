@@ -50,7 +50,7 @@ resources <- c(
   "stat",
   "type",
   "language"
-  )
+)
 
 resources_request <- map(
   resources,
@@ -66,9 +66,20 @@ resources_request <- map(
 resource_lookups <- map(
   resources_request,
   \(x) {
-    x[["results"]] |>
-      enframe(name = "id") |>
-      unnest_wider(value)
+
+    table <- x[["results"]] |>
+      enframe(name = "order") |>
+      unnest_wider(value) |>
+      mutate(id = str_extract(url, "(?<=/)\\d+(?=/$)"))
+
+    if ("name" %in% names(table)) {
+      table <- table |> select(id, name, url)
+    } else {
+      table <- table |> select(id, url)
+    }
+
+    return(table)
+
   }
 )
 
