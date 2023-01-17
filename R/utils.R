@@ -18,10 +18,7 @@
   if (!(is.character(resource) | is.numeric(resource))) {
     stop(
       "Argument 'resource' must be a valid numeric or character value for the endpoint '",
-      endpoint,
-      "'. See resource_lookups[['",
-      endpoint,
-      "']] for details.",
+      endpoint, "'. See resource_lookups[['", endpoint, "']] for details.",
       call. = FALSE
     )
   }
@@ -32,10 +29,7 @@
   ) {
     stop(
       "Argument 'resource' must be a valid numeric value for the endpoint '",
-      endpoint,
-      "'. See resource_lookups[['",
-      endpoint,
-      "']] for details.",
+      endpoint, "'. See resource_lookups[['", endpoint, "']] for details.",
       call. = FALSE
     )
   }
@@ -70,13 +64,9 @@
 
     if (!resource %in% endpoint_table[["id"]]) {
       stop(
-        "The resource ID you provided, '",
-        resource,
-        "' is not valid for the endpoint '",
-        endpoint,
-        "'. See resource_lookups[['",
-        endpoint,
-        "']] for details.",
+        "The resource ID you provided, '", resource,
+        "' is not valid for the endpoint '", endpoint,
+        "'. See resource_lookups[['", endpoint, "']] for details.",
         call. = FALSE
       )
     }
@@ -87,17 +77,12 @@
 
     if (!resource %in% endpoint_table[["name"]]) {
       stop(
-        "The resource name you provided, '",
-        resource,
-        "' is not valid for the endpoint '",
-        endpoint,
-        "'. See resource_lookups[['",
-        endpoint,
-        "']] for details.",
+        "The resource name you provided, '", resource,
+        "' is not valid for the endpoint '", endpoint,
+        "'. See resource_lookups[['", endpoint, "']] for details.",
         call. = FALSE
       )
     }
   }
 
 }
-

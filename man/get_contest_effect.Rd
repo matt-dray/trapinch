@@ -4,23 +4,28 @@
 \alias{get_contest_effect}
 \title{Get Data from PokeAPI: Contest Effects}
 \source{
-PokéAPI \url{https://pokeapi.co/}.
+API by PokéAPI \url{https://pokeapi.co/}. Data from The Pokémon Company.
 }
 \usage{
 get_contest_effect(resource)
 }
 \arguments{
-\item{resource}{Character or numeric. The name or ID of the item to return
-from the named endpoint.}
+\item{resource}{Character or numeric. The name or ID of the resource to
+return from the named endpoint. Most 'get' functions can accept either,
+but some only accept an ID. See details.}
 }
 \value{
-A (usually-) nested list.
+A list. The exact contents depend on the endpoint and resource being
+requested
 }
 \description{
 Get Data from PokeAPI: Contest Effects
 }
 \details{
-See \href{https://pokeapi.co/docs/v2#berries}{the API documentation}.
+Note that the 'trapinch' package uses version 2 of the API. See
+\href{https://pokeapi.co/docs/v2}{the PokéAPI documentation} for more
+information and a full list of endpoints and resources. You can also view
+the built-in \code{\link{resource_lookups}} data for this information.
 }
 \examples{
 \dontrun{get_contest_effect(1)}
