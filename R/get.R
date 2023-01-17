@@ -1,19 +1,25 @@
 
 #' Get Data from the PokéAPI Service
 #'
-#' @param endpoint Character. The name of the endpoint to query, such as
-#'     \code{"berries"}, \code{"locations"} or \code{"pokemon"}.
-#' @param resource Character or numeric. The name or ID of the item to return
-#'     from the named endpoint.
+#' @param endpoint Character. The name of the endpoint to query. This includes
+#'     categories such as \code{"pokemon"}, \code{"locations"} or
+#'     \code{"berries"}. See details.
+#' @param resource Character or numeric. The name or ID of the resource to
+#'     return from the named endpoint. Most 'get' functions can accept either,
+#'     but some only accept an ID.. See details.
 #' @param ext Character. Only needed for Pokémon encounters.
 #' @param verbose Logical. Show extra output when request is performed? Defaults
 #'     to \code{FALSE}.
 #'
-#' @details See \href{https://pokeapi.co/docs/v2#berries}{the API documentation}.
+#' @details See \href{https://pokeapi.co/docs/v2}{the PokéAPI documentation}.for
+#'     more information and a full list of endpoints and resources. You can also
+#'     view the built-in \code{\link{resource_lookups}} data for this
+#'     information. Note that the 'trapinch' package uses version 2 of the API.
 #'
-#' @return A (usually-) nested list.
+#' @return A (usually-) nested list. The contents depend on the endpoint and
+#'     resource being called.
 #'
-#' @source PokéAPI <https://pokeapi.co/>.
+#' @source API by PokéAPI <https://pokeapi.co/>. Data from The Pokémon Company.
 #'
 #' @export
 #'

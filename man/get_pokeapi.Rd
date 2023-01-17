@@ -4,17 +4,19 @@
 \alias{get_pokeapi}
 \title{Get Data from the PokéAPI Service}
 \source{
-PokéAPI \url{https://pokeapi.co/}.
+API by PokéAPI \url{https://pokeapi.co/}. Data from The Pokémon Company.
 }
 \usage{
 get_pokeapi(endpoint, resource, ext = NULL, verbose = FALSE)
 }
 \arguments{
-\item{endpoint}{Character. The name of the endpoint to query, such as
-\code{"berries"}, \code{"locations"} or \code{"pokemon"}.}
+\item{endpoint}{Character. The name of the endpoint to query. This includes
+categories such as \code{"pokemon"}, \code{"locations"} or
+\code{"berries"}. See details.}
 
-\item{resource}{Character or numeric. The name or ID of the item to return
-from the named endpoint.}
+\item{resource}{Character or numeric. The name or ID of the resource to
+return from the named endpoint. Most 'get' functions can accept either,
+but some only accept an ID.. See details.}
 
 \item{ext}{Character. Only needed for Pokémon encounters.}
 
@@ -22,13 +24,17 @@ from the named endpoint.}
 to \code{FALSE}.}
 }
 \value{
-A (usually-) nested list.
+A (usually-) nested list. The contents depend on the endpoint and
+resource being called.
 }
 \description{
 Get Data from the PokéAPI Service
 }
 \details{
-See \href{https://pokeapi.co/docs/v2#berries}{the API documentation}.
+See \href{https://pokeapi.co/docs/v2}{the PokéAPI documentation}.for
+more information and a full list of endpoints and resources. You can also
+view the built-in \code{\link{resource_lookups}} data for this
+information. Note that the 'trapinch' package uses version 2 of the API.
 }
 \examples{
 \dontrun{get_pokeapi("pokemon", "bulbasaur")}
