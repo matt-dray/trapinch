@@ -16,25 +16,27 @@ categories such as \code{"pokemon"}, \code{"locations"} or
 
 \item{resource}{Character or numeric. The name or ID of the resource to
 return from the named endpoint. Most 'get' functions can accept either,
-but some only accept an ID.. See details.}
+but some only accept an ID. See details.}
 
-\item{ext}{Character. Only needed for Pokémon encounters.}
+\item{ext}{Character. Further extension to the provided endpoint and
+resource. Only used for the 'pokemon' endpoint to find Pokémon
+encounters.}
 
-\item{verbose}{Logical. Show extra output when request is performed? Defaults
-to \code{FALSE}.}
+\item{verbose}{Logical. Show extra API-related output when request is
+performed? Defaults to \code{FALSE}.}
 }
 \value{
-A (usually-) nested list. The contents depend on the endpoint and
-resource being called.
+A list. The exact contents depend on the endpoint and resource being
+requested
 }
 \description{
 Get Data from the PokéAPI Service
 }
 \details{
-See \href{https://pokeapi.co/docs/v2}{the PokéAPI documentation}.for
-more information and a full list of endpoints and resources. You can also
-view the built-in \code{\link{resource_lookups}} data for this
-information. Note that the 'trapinch' package uses version 2 of the API.
+Note that the 'trapinch' package uses version 2 of the API. See
+\href{https://pokeapi.co/docs/v2}{the PokéAPI documentation} for more
+information and a full list of endpoints and resources. You can also view
+the built-in \code{\link{resource_lookups}} data for this information.
 }
 \examples{
 \dontrun{get_pokeapi("pokemon", "bulbasaur")}

@@ -12,20 +12,20 @@ get_encounter_method(resource)
 \arguments{
 \item{resource}{Character or numeric. The name or ID of the resource to
 return from the named endpoint. Most 'get' functions can accept either,
-but some only accept an ID.. See details.}
+but some only accept an ID. See details.}
 }
 \value{
-A (usually-) nested list. The contents depend on the endpoint and
-resource being called.
+A list. The exact contents depend on the endpoint and resource being
+requested
 }
 \description{
 Get Data from PokeAPI: Encounter Methods
 }
 \details{
-See \href{https://pokeapi.co/docs/v2}{the PokéAPI documentation}.for
-more information and a full list of endpoints and resources. You can also
-view the built-in \code{\link{resource_lookups}} data for this
-information. Note that the 'trapinch' package uses version 2 of the API.
+Note that the 'trapinch' package uses version 2 of the API. See
+\href{https://pokeapi.co/docs/v2}{the PokéAPI documentation} for more
+information and a full list of endpoints and resources. You can also view
+the built-in \code{\link{resource_lookups}} data for this information.
 }
 \examples{
 \dontrun{get_encounter_method("walk")}

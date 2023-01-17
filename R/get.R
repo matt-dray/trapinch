@@ -6,18 +6,20 @@
 #'     \code{"berries"}. See details.
 #' @param resource Character or numeric. The name or ID of the resource to
 #'     return from the named endpoint. Most 'get' functions can accept either,
-#'     but some only accept an ID.. See details.
-#' @param ext Character. Only needed for Pokémon encounters.
-#' @param verbose Logical. Show extra output when request is performed? Defaults
-#'     to \code{FALSE}.
+#'     but some only accept an ID. See details.
+#' @param ext Character. Further extension to the provided endpoint and
+#'     resource. Only used for the 'pokemon' endpoint to find Pokémon
+#'     encounters.
+#' @param verbose Logical. Show extra API-related output when request is
+#'     performed? Defaults to \code{FALSE}.
 #'
-#' @details See \href{https://pokeapi.co/docs/v2}{the PokéAPI documentation}.for
-#'     more information and a full list of endpoints and resources. You can also
-#'     view the built-in \code{\link{resource_lookups}} data for this
-#'     information. Note that the 'trapinch' package uses version 2 of the API.
+#' @details Note that the 'trapinch' package uses version 2 of the API. See
+#'     \href{https://pokeapi.co/docs/v2}{the PokéAPI documentation} for more
+#'     information and a full list of endpoints and resources. You can also view
+#'     the built-in \code{\link{resource_lookups}} data for this information.
 #'
-#' @return A (usually-) nested list. The contents depend on the endpoint and
-#'     resource being called.
+#' @return A list. The exact contents depend on the endpoint and resource being
+#'     requested
 #'
 #' @source API by PokéAPI <https://pokeapi.co/>. Data from The Pokémon Company.
 #'
@@ -30,7 +32,10 @@ get_pokeapi <- function(endpoint, resource, ext = NULL, verbose = FALSE) {
   .check_args(endpoint, resource, ext, verbose)
   .check_resource_exists(endpoint, resource)
 
-  request <- httr2::request("https://pokeapi.co/api/v2/") |>
+  base <- "https://pokeapi.co/api/v2/"
+  agent <- "trapinch (http://github.com/matt-dray/trapinch)"
+
+  request <- httr2::request(base) |>
     httr2::req_url_path_append(endpoint, resource, ext)
 
   if (verbose) {
@@ -38,9 +43,11 @@ get_pokeapi <- function(endpoint, resource, ext = NULL, verbose = FALSE) {
   }
 
   request |>
-    httr2::req_user_agent("trapinch (http://github.com/matt-dray/trapinch)") |>
+    httr2::req_user_agent(agent) |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    httr2::resp_body_json(request)
+
+  return(request)
 
 }
 

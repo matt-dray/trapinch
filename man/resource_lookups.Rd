@@ -3,12 +3,13 @@
 \docType{data}
 \name{resource_lookups}
 \alias{resource_lookups}
-\title{All Resources and Endpoints}
+\title{PokéAPI Endpoints and Resources Lookup}
 \format{
-A list of dataframes of length 48, which is one per endpoint
-available from PokéAPI. Each dataframe has columns \code{id} (integer),
-\code{name} (character) (possibly) and \code{url} (character), and a
-number of rows equal to the total number of resources available for the
+A list of length 48. Each element is a dataframe that represents the
+possible resources for each PokéAPI endpoint. The  dataframes have
+columns \code{id} (integer), \code{name} (character) where relevant and
+corresponding \code{url} (character). The number of rows in each
+dataframe is equal to the total number of resources  available for the
 given endpoint.
 }
 \source{
@@ -18,7 +19,8 @@ API by PokéAPI \url{https://pokeapi.co/}. Data from The Pokémon Company.
 resource_lookups
 }
 \description{
-IDs, names and URLs for all the resources for each endpoint that can be
-requested from the PokéAPI.
+IDs, names and URLs for each resource from each endpoint available from the
+PokéAPI. These can be passed used in each of the package's \code{get_*()}
+functions.
 }
 \keyword{datasets}

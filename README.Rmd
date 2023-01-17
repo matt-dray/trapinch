@@ -61,7 +61,7 @@ names(trapinch::resource_lookups)
 And an example resource table for Pokémon types:
 
 ```{r resource}
-trapinch::resource_lookups[["type"]]
+head(trapinch::resource_lookups[["type"]])
 ```
 
 # Expectations
