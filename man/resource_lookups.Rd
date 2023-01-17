@@ -3,15 +3,16 @@
 \docType{data}
 \name{resource_lookups}
 \alias{resource_lookups}
-\title{All Endpoint Resources}
+\title{All Resources and Endpoints}
 \format{
-A list of dataframes of length 48, which is the number of endpoints
-available from PokéAPI. Each dataframe has columns \code{id}, \code{name}
-(possibly) and \code{url}, and a number of rows equal to the total number
-of resources for the given endpoint.
+A list of dataframes of length 48, which is one per endpoint
+available from PokéAPI. Each dataframe has columns \code{id} (integer),
+\code{name} (character) (possibly) and \code{url} (character), and a
+number of rows equal to the total number of resources available for the
+given endpoint.
 }
 \source{
-PokéAPI \url{https://pokeapi.co/}.
+API by PokéAPI \url{https://pokeapi.co/}. Data from The Pokémon Company.
 }
 \usage{
 resource_lookups
