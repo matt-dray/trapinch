@@ -30,13 +30,15 @@ get_pokeapi <- function(endpoint, resource, ext = NULL, verbose = FALSE) {
 
   .check_internet()
   .check_args(endpoint, resource, ext, verbose)
-  .check_resource_exists(endpoint, resource)
+  .check_endpoint_exists(endpoint, resource)
 
   base <- "https://pokeapi.co/api/v2/"
   agent <- "trapinch (http://github.com/matt-dray/trapinch)"
+  resource_count <- nrow(trapinch::resource_lookups[[endpoint]])
 
   request <- httr2::request(base) |>
-    httr2::req_url_path_append(endpoint, resource, ext)
+    httr2::req_url_path_append(endpoint, resource, ext) |>
+    httr2::req_url_query(limit = resource_count)
 
   if (verbose) {
     request <- httr2::req_verbose()
