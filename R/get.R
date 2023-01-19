@@ -45,9 +45,7 @@ get_pokeapi <- function(endpoint, resource, ext = NULL, verbose = FALSE) {
   request |>
     httr2::req_user_agent(agent) |>
     httr2::req_perform() |>
-    httr2::resp_body_json(request)
-
-  return(request)
+    httr2::resp_body_json()
 
 }
 
