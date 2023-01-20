@@ -8,14 +8,15 @@
 
 .check_args <- function(endpoint, resource, ext, verbose) {
 
-  if (!is.character(endpoint)) {
+  if (!is.character(endpoint) | is.na(endpoint)) {
     stop(
-      "Argument 'endpoint' must be a string. ",
+      "Argument 'endpoint' must be a valid string. ",
       "See names(trapinch::resource_lookups) for all available endpoints.",
       call. = FALSE)
   }
 
   if (
+    is.na(resource) ||
     (!(is.character(resource) | is.numeric(resource))) ||
     (is.character(resource) &
      endpoint %in% c("contest-effect", "evolution-chain", "machine", "characteristic"))
@@ -30,12 +31,13 @@
   }
 
   if (
+    is.na(resource) ||
     (!is.null(ext) && !is.character(ext)) ||
     (!is.null(ext) && (endpoint == "type" & ext != "encounters"))
   ) {
     stop(
       "Argument 'ext' can only be used with endpoint 'pokemon' ",
-      "and it must be set to 'encounter'.",
+      "where it should only be set to the string 'encounters'.",
       call. = FALSE
     )
   }
