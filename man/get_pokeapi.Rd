@@ -7,7 +7,7 @@
 API by PokéAPI \url{https://pokeapi.co/}. Data from The Pokémon Company.
 }
 \usage{
-get_pokeapi(endpoint, resource, ext = NULL, verbose = FALSE)
+get_pokeapi(endpoint, resource = NULL, ext = NULL, verbose = FALSE)
 }
 \arguments{
 \item{endpoint}{Character. The name of the endpoint to query. This includes
@@ -16,11 +16,13 @@ categories such as \code{"pokemon"}, \code{"locations"} or
 
 \item{resource}{Character or numeric. The name or ID of the resource to
 return from the named endpoint. Most 'get' functions can accept either,
-but some only accept an ID. See details.}
+but some only accept an ID. Defaults to \code{NULL}, in which case all
+possible resources are returned for the provided \code{endpoint}. See
+details.}
 
 \item{ext}{Character. Further extension to the provided endpoint and
-resource. Only used for the 'pokemon' endpoint to find Pokémon
-encounters.}
+resource. Defaults to \code{NULL}. Only used for the 'pokemon' endpoint
+to find Pokémon encounters.}
 
 \item{verbose}{Logical. Show extra API-related output when request is
 performed? Defaults to \code{FALSE}.}

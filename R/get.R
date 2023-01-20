@@ -6,10 +6,12 @@
 #'     \code{"berries"}. See details.
 #' @param resource Character or numeric. The name or ID of the resource to
 #'     return from the named endpoint. Most 'get' functions can accept either,
-#'     but some only accept an ID. See details.
+#'     but some only accept an ID. Defaults to \code{NULL}, in which case all
+#'     possible resources are returned for the provided \code{endpoint}. See
+#'     details.
 #' @param ext Character. Further extension to the provided endpoint and
-#'     resource. Only used for the 'pokemon' endpoint to find Pokémon
-#'     encounters.
+#'     resource. Defaults to \code{NULL}. Only used for the 'pokemon' endpoint
+#'     to find Pokémon encounters.
 #' @param verbose Logical. Show extra API-related output when request is
 #'     performed? Defaults to \code{FALSE}.
 #'
@@ -26,7 +28,12 @@
 #' @export
 #'
 #' @examples \dontrun{get_pokeapi("pokemon", "bulbasaur")}
-get_pokeapi <- function(endpoint, resource, ext = NULL, verbose = FALSE) {
+get_pokeapi <- function(
+    endpoint,
+    resource = NULL,
+    ext = NULL,
+    verbose = FALSE
+) {
 
   .check_internet()
   .check_args(endpoint, resource, ext, verbose)

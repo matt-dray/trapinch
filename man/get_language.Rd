@@ -12,7 +12,9 @@ get_language(resource)
 \arguments{
 \item{resource}{Character or numeric. The name or ID of the resource to
 return from the named endpoint. Most 'get' functions can accept either,
-but some only accept an ID. See details.}
+but some only accept an ID. Defaults to \code{NULL}, in which case all
+possible resources are returned for the provided \code{endpoint}. See
+details.}
 }
 \value{
 A list. The exact contents depend on the endpoint and resource being
