@@ -1,0 +1,19 @@
+{
+    "count": 3,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "name": "female",
+            "url": "https://pokeapi.co/api/v2/gender/1/"
+        },
+        {
+            "name": "male",
+            "url": "https://pokeapi.co/api/v2/gender/2/"
+        },
+        {
+            "name": "genderless",
+            "url": "https://pokeapi.co/api/v2/gender/3/"
+        }
+    ]
+}

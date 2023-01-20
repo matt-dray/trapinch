@@ -1,0 +1,59 @@
+{
+    "count": 13,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "name": "swarm",
+            "url": "https://pokeapi.co/api/v2/encounter-condition/1/"
+        },
+        {
+            "name": "time",
+            "url": "https://pokeapi.co/api/v2/encounter-condition/2/"
+        },
+        {
+            "name": "radar",
+            "url": "https://pokeapi.co/api/v2/encounter-condition/3/"
+        },
+        {
+            "name": "slot2",
+            "url": "https://pokeapi.co/api/v2/encounter-condition/4/"
+        },
+        {
+            "name": "radio",
+            "url": "https://pokeapi.co/api/v2/encounter-condition/5/"
+        },
+        {
+            "name": "season",
+            "url": "https://pokeapi.co/api/v2/encounter-condition/6/"
+        },
+        {
+            "name": "starter",
+            "url": "https://pokeapi.co/api/v2/encounter-condition/7/"
+        },
+        {
+            "name": "tv-option",
+            "url": "https://pokeapi.co/api/v2/encounter-condition/8/"
+        },
+        {
+            "name": "story-progress",
+            "url": "https://pokeapi.co/api/v2/encounter-condition/9/"
+        },
+        {
+            "name": "other",
+            "url": "https://pokeapi.co/api/v2/encounter-condition/10/"
+        },
+        {
+            "name": "item",
+            "url": "https://pokeapi.co/api/v2/encounter-condition/11/"
+        },
+        {
+            "name": "weekday",
+            "url": "https://pokeapi.co/api/v2/encounter-condition/12/"
+        },
+        {
+            "name": "first-party-pokemon",
+            "url": "https://pokeapi.co/api/v2/encounter-condition/13/"
+        }
+    ]
+}

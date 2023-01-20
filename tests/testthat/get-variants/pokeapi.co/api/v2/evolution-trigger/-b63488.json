@@ -1,0 +1,59 @@
+{
+    "count": 13,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "name": "level-up",
+            "url": "https://pokeapi.co/api/v2/evolution-trigger/1/"
+        },
+        {
+            "name": "trade",
+            "url": "https://pokeapi.co/api/v2/evolution-trigger/2/"
+        },
+        {
+            "name": "use-item",
+            "url": "https://pokeapi.co/api/v2/evolution-trigger/3/"
+        },
+        {
+            "name": "shed",
+            "url": "https://pokeapi.co/api/v2/evolution-trigger/4/"
+        },
+        {
+            "name": "spin",
+            "url": "https://pokeapi.co/api/v2/evolution-trigger/5/"
+        },
+        {
+            "name": "tower-of-darkness",
+            "url": "https://pokeapi.co/api/v2/evolution-trigger/6/"
+        },
+        {
+            "name": "tower-of-waters",
+            "url": "https://pokeapi.co/api/v2/evolution-trigger/7/"
+        },
+        {
+            "name": "three-critical-hits",
+            "url": "https://pokeapi.co/api/v2/evolution-trigger/8/"
+        },
+        {
+            "name": "take-damage",
+            "url": "https://pokeapi.co/api/v2/evolution-trigger/9/"
+        },
+        {
+            "name": "other",
+            "url": "https://pokeapi.co/api/v2/evolution-trigger/10/"
+        },
+        {
+            "name": "agile-style-move",
+            "url": "https://pokeapi.co/api/v2/evolution-trigger/11/"
+        },
+        {
+            "name": "strong-style-move",
+            "url": "https://pokeapi.co/api/v2/evolution-trigger/12/"
+        },
+        {
+            "name": "recoil-damage",
+            "url": "https://pokeapi.co/api/v2/evolution-trigger/13/"
+        }
+    ]
+}

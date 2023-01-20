@@ -1,10 +1,10 @@
-.check_internet <- function() {
-
-  if (!curl::has_internet()) {
-    stop("Please check your internet connection.", call. = FALSE)
-  }
-
-}
+# .check_internet <- function() {
+#
+#   if (!curl::has_internet()) {
+#     stop("Please check your internet connection.", call. = FALSE)
+#   }
+#
+# }
 
 .check_args <- function(endpoint, resource, ext, verbose) {
 

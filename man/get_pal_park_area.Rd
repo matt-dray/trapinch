@@ -7,7 +7,7 @@
 API by PokéAPI \url{https://pokeapi.co/}. Data from The Pokémon Company.
 }
 \usage{
-get_pal_park_area(resource)
+get_pal_park_area(resource = NULL)
 }
 \arguments{
 \item{resource}{Character or numeric. The name or ID of the resource to

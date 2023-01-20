@@ -35,7 +35,7 @@ get_pokeapi <- function(
     verbose = FALSE
 ) {
 
-  .check_internet()
+  # .check_internet()
   .check_args(endpoint, resource, ext, verbose)
   .check_endpoint_exists(endpoint, resource)
 
@@ -48,7 +48,7 @@ get_pokeapi <- function(
     httr2::req_url_query(limit = resource_count)
 
   if (verbose) {
-    request <- httr2::req_verbose()
+    request <- httr2::req_verbose(request)
   }
 
   request |>
@@ -66,7 +66,7 @@ get_pokeapi <- function(
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_berry("cheri")}
-get_berry <- function(resource) {
+get_berry <- function(resource = NULL) {
   get_pokeapi("berry", resource)
 }
 
@@ -74,7 +74,7 @@ get_berry <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_berry_firmness("very-soft")}
-get_berry_firmness <- function(resource) {
+get_berry_firmness <- function(resource = NULL) {
   get_pokeapi("berry-firmness", resource)
 }
 
@@ -82,7 +82,7 @@ get_berry_firmness <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_berry_flavor("spicy")}
-get_berry_flavor <- function(resource) {
+get_berry_flavor <- function(resource = NULL) {
   get_pokeapi("berry-flavor", resource)
 }
 
@@ -94,7 +94,7 @@ get_berry_flavor <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_contest_type("cool")}
-get_contest_type <- function(resource) {
+get_contest_type <- function(resource = NULL) {
   get_pokeapi("contest-type", resource)
 }
 
@@ -102,7 +102,7 @@ get_contest_type <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_contest_effect(1)}
-get_contest_effect <- function(resource) {
+get_contest_effect <- function(resource = NULL) {
   get_pokeapi("contest-effect", resource)
 }
 
@@ -110,7 +110,7 @@ get_contest_effect <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_super_contest_effect(1)}
-get_super_contest_effect <- function(resource) {
+get_super_contest_effect <- function(resource = NULL) {
   get_pokeapi("super-contest-effect", resource)
 }
 
@@ -122,7 +122,7 @@ get_super_contest_effect <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_encounter_method("walk")}
-get_encounter_method <- function(resource) {
+get_encounter_method <- function(resource = NULL) {
   get_pokeapi("encounter-method", resource)
 }
 
@@ -130,7 +130,7 @@ get_encounter_method <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_encounter_condition("swarm")}
-get_encounter_condition <- function(resource) {
+get_encounter_condition <- function(resource = NULL) {
   get_pokeapi("encounter-condition", resource)
 }
 
@@ -138,7 +138,7 @@ get_encounter_condition <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_encounter_condition_value("swarm-yes")}
-get_encounter_condition_value <- function(resource) {
+get_encounter_condition_value <- function(resource = NULL) {
   get_pokeapi("encounter-condition-value", resource)
 }
 
@@ -150,7 +150,7 @@ get_encounter_condition_value <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_evolution_chain(1)}
-get_evolution_chain <- function(resource) {
+get_evolution_chain <- function(resource = NULL) {
   get_pokeapi("evolution-chain", resource)
 }
 
@@ -158,7 +158,7 @@ get_evolution_chain <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_evolution_trigger("level-up")}
-get_evolution_trigger <- function(resource) {
+get_evolution_trigger <- function(resource = NULL) {
   get_pokeapi("evolution-trigger", resource)
 }
 
@@ -170,7 +170,7 @@ get_evolution_trigger <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_generation("generation-i")}
-get_generation  <- function(resource) {
+get_generation  <- function(resource = NULL) {
   get_pokeapi("generation", resource)
 }
 
@@ -182,7 +182,7 @@ get_generation  <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_pokedex("kanto")}
-get_pokedex  <- function(resource) {
+get_pokedex  <- function(resource = NULL) {
   get_pokeapi("pokedex", resource)
 }
 
@@ -194,14 +194,15 @@ get_pokedex  <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_version("red")}
-get_version <- function(resource) {
+get_version <- function(resource = NULL) {
   get_pokeapi("version", resource)
 }
 
 #' Get Data from PokeAPI: Version Groups
 #' @inherit get_pokeapi
+#' @export
 #' @examples \dontrun{get_version_group("red-blue")}
-get_version_group <- function(resource) {
+get_version_group <- function(resource = NULL) {
   get_pokeapi("version-group", resource)
 }
 
@@ -213,7 +214,7 @@ get_version_group <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_item("master-ball")}
-get_item <- function(resource) {
+get_item <- function(resource = NULL) {
   get_pokeapi("item", resource)
 }
 
@@ -221,7 +222,7 @@ get_item <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_item_attribute("countable")}
-get_item_attribute <- function(resource) {
+get_item_attribute <- function(resource = NULL) {
   get_pokeapi("item-attribute", resource)
 }
 
@@ -229,7 +230,7 @@ get_item_attribute <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_item_category("stat-boosts")}
-get_item_category <- function(resource) {
+get_item_category <- function(resource = NULL) {
   get_pokeapi("item-category", resource)
 }
 
@@ -237,7 +238,7 @@ get_item_category <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_item_fling_effect("badly-poison")}
-get_item_fling_effect <- function(resource) {
+get_item_fling_effect <- function(resource = NULL) {
   get_pokeapi("item-fling-effect", resource)
 }
 
@@ -245,7 +246,7 @@ get_item_fling_effect <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_item_pocket("misc")}
-get_item_pocket <- function(resource) {
+get_item_pocket <- function(resource = NULL) {
   get_pokeapi("item-pocket", resource)
 }
 
@@ -257,7 +258,7 @@ get_item_pocket <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_location("canalave-city")}
-get_location <- function(resource) {
+get_location <- function(resource = NULL) {
   get_pokeapi("location", resource)
 }
 
@@ -265,7 +266,7 @@ get_location <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_location_area("canalave-city-area")}
-get_location_area <- function(resource) {
+get_location_area <- function(resource = NULL) {
   get_pokeapi("location-area", resource)
 }
 
@@ -273,7 +274,7 @@ get_location_area <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_pal_park_area("forest")}
-get_pal_park_area <- function(resource) {
+get_pal_park_area <- function(resource = NULL) {
   get_pokeapi("pal-park-area", resource)
 }
 
@@ -281,7 +282,7 @@ get_pal_park_area <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_region("kanto")}
-get_region <- function(resource) {
+get_region <- function(resource = NULL) {
   get_pokeapi("region", resource)
 }
 
@@ -293,7 +294,7 @@ get_region <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_machine(1)}
-get_machine <- function(resource) {
+get_machine <- function(resource = NULL) {
   get_pokeapi("machine", resource)
 }
 
@@ -305,7 +306,7 @@ get_machine <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_move("pound")}
-get_move <- function(resource) {
+get_move <- function(resource = NULL) {
   get_pokeapi("item-pocket", resource)
 }
 
@@ -313,7 +314,7 @@ get_move <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_move_ailment("paralysis")}
-get_move_ailment <- function(resource) {
+get_move_ailment <- function(resource = NULL) {
   get_pokeapi("move-ailment", resource)
 }
 
@@ -321,7 +322,7 @@ get_move_ailment <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_move_battle_style("attack")}
-get_move_battle_style <- function(resource) {
+get_move_battle_style <- function(resource = NULL) {
   get_pokeapi("move-battle-style", resource)
 }
 
@@ -329,7 +330,7 @@ get_move_battle_style <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_move_category("ailment")}
-get_move_category <- function(resource) {
+get_move_category <- function(resource = NULL) {
   get_pokeapi("move-category", resource)
 }
 
@@ -337,7 +338,7 @@ get_move_category <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_move_damage_class("status")}
-get_move_damage_class <- function(resource) {
+get_move_damage_class <- function(resource = NULL) {
   get_pokeapi("move-damage-class", resource)
 }
 
@@ -345,7 +346,7 @@ get_move_damage_class <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_move_learn_method("level-up")}
-get_move_learn_method <- function(resource) {
+get_move_learn_method <- function(resource = NULL) {
   get_pokeapi("move-learn-method", resource)
 }
 
@@ -353,7 +354,7 @@ get_move_learn_method <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_move_target("specific-move")}
-get_move_target <- function(resource) {
+get_move_target <- function(resource = NULL) {
   get_pokeapi("move-target", resource)
 }
 
@@ -365,7 +366,7 @@ get_move_target <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_ability("stench")}
-get_ability <- function(resource) {
+get_ability <- function(resource = NULL) {
   get_pokeapi("ability", resource)
 }
 
@@ -373,7 +374,7 @@ get_ability <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_characteristic(1)}
-get_characteristic <- function(resource) {
+get_characteristic <- function(resource = NULL) {
   get_pokeapi("characteristic", resource)
 }
 
@@ -381,7 +382,7 @@ get_characteristic <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_egg_group("monster")}
-get_egg_group <- function(resource) {
+get_egg_group <- function(resource = NULL) {
   get_pokeapi("egg-group", resource)
 }
 
@@ -389,7 +390,7 @@ get_egg_group <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_gender("female")}
-get_gender <- function(resource) {
+get_gender <- function(resource = NULL) {
   get_pokeapi("gender", resource)
 }
 
@@ -397,7 +398,7 @@ get_gender <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_growth_rate("slow")}
-get_growth_rate <- function(resource) {
+get_growth_rate <- function(resource = NULL) {
   get_pokeapi("growth-rate", resource)
 }
 
@@ -405,7 +406,7 @@ get_growth_rate <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_nature("bold")}
-get_nature <- function(resource) {
+get_nature <- function(resource = NULL) {
   get_pokeapi("nature", resource)
 }
 
@@ -413,7 +414,7 @@ get_nature <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_pokeathlon_stat("speed")}
-get_pokeathlon_stat <- function(resource) {
+get_pokeathlon_stat <- function(resource = NULL) {
   get_pokeapi("pokeathlon-stat", resource)
 }
 
@@ -421,7 +422,7 @@ get_pokeathlon_stat <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_pokemon("clefairy")}
-get_pokemon <- function(resource) {
+get_pokemon <- function(resource = NULL) {
   get_pokeapi("pokemon", resource)
 }
 
@@ -437,7 +438,7 @@ get_pokemon_location_areas  <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_pokemon_color("black")}
-get_pokemon_color <- function(resource) {
+get_pokemon_color <- function(resource = NULL) {
   get_pokeapi("pokemon-color", resource)
 }
 
@@ -445,7 +446,7 @@ get_pokemon_color <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_pokemon_form("arceus-bug")}
-get_pokemon_form <- function(resource) {
+get_pokemon_form <- function(resource = NULL) {
   get_pokeapi("pokemon-form", resource)
 }
 
@@ -453,7 +454,7 @@ get_pokemon_form <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_pokemon_habitat("cave")}
-get_pokemon_habitat <- function(resource) {
+get_pokemon_habitat <- function(resource = NULL) {
   get_pokeapi("pokemon-habitat", resource)
 }
 
@@ -461,7 +462,7 @@ get_pokemon_habitat <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_pokemon_shape("ball")}
-get_pokemon_shape <- function(resource) {
+get_pokemon_shape <- function(resource = NULL) {
   get_pokeapi("pokemon-shape", resource)
 }
 
@@ -469,7 +470,7 @@ get_pokemon_shape <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_pokemon_species("wormadam")}
-get_pokemon_species <- function(resource) {
+get_pokemon_species <- function(resource = NULL) {
   get_pokeapi("pokemon-species", resource)
 }
 
@@ -477,7 +478,7 @@ get_pokemon_species <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_stat("attack")}
-get_stat <- function(resource) {
+get_stat <- function(resource = NULL) {
   get_pokeapi("stat", resource)
 }
 
@@ -485,7 +486,7 @@ get_stat <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_type("ground")}
-get_type <- function(resource) {
+get_type <- function(resource = NULL) {
   get_pokeapi("type", resource)
 }
 
@@ -497,6 +498,6 @@ get_type <- function(resource) {
 #' @inherit get_pokeapi
 #' @export
 #' @examples \dontrun{get_language("ja")}
-get_language <- function(resource) {
+get_language <- function(resource = NULL) {
   get_pokeapi("language", resource)
 }

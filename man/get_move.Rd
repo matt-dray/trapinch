@@ -7,7 +7,7 @@
 API by PokéAPI \url{https://pokeapi.co/}. Data from The Pokémon Company.
 }
 \usage{
-get_move(resource)
+get_move(resource = NULL)
 }
 \arguments{
 \item{resource}{Character or numeric. The name or ID of the resource to

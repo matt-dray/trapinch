@@ -1,0 +1,123 @@
+{
+    "count": 29,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "name": "national",
+            "url": "https://pokeapi.co/api/v2/pokedex/1/"
+        },
+        {
+            "name": "kanto",
+            "url": "https://pokeapi.co/api/v2/pokedex/2/"
+        },
+        {
+            "name": "original-johto",
+            "url": "https://pokeapi.co/api/v2/pokedex/3/"
+        },
+        {
+            "name": "hoenn",
+            "url": "https://pokeapi.co/api/v2/pokedex/4/"
+        },
+        {
+            "name": "original-sinnoh",
+            "url": "https://pokeapi.co/api/v2/pokedex/5/"
+        },
+        {
+            "name": "extended-sinnoh",
+            "url": "https://pokeapi.co/api/v2/pokedex/6/"
+        },
+        {
+            "name": "updated-johto",
+            "url": "https://pokeapi.co/api/v2/pokedex/7/"
+        },
+        {
+            "name": "original-unova",
+            "url": "https://pokeapi.co/api/v2/pokedex/8/"
+        },
+        {
+            "name": "updated-unova",
+            "url": "https://pokeapi.co/api/v2/pokedex/9/"
+        },
+        {
+            "name": "conquest-gallery",
+            "url": "https://pokeapi.co/api/v2/pokedex/11/"
+        },
+        {
+            "name": "kalos-central",
+            "url": "https://pokeapi.co/api/v2/pokedex/12/"
+        },
+        {
+            "name": "kalos-coastal",
+            "url": "https://pokeapi.co/api/v2/pokedex/13/"
+        },
+        {
+            "name": "kalos-mountain",
+            "url": "https://pokeapi.co/api/v2/pokedex/14/"
+        },
+        {
+            "name": "updated-hoenn",
+            "url": "https://pokeapi.co/api/v2/pokedex/15/"
+        },
+        {
+            "name": "original-alola",
+            "url": "https://pokeapi.co/api/v2/pokedex/16/"
+        },
+        {
+            "name": "original-melemele",
+            "url": "https://pokeapi.co/api/v2/pokedex/17/"
+        },
+        {
+            "name": "original-akala",
+            "url": "https://pokeapi.co/api/v2/pokedex/18/"
+        },
+        {
+            "name": "original-ulaula",
+            "url": "https://pokeapi.co/api/v2/pokedex/19/"
+        },
+        {
+            "name": "original-poni",
+            "url": "https://pokeapi.co/api/v2/pokedex/20/"
+        },
+        {
+            "name": "updated-alola",
+            "url": "https://pokeapi.co/api/v2/pokedex/21/"
+        },
+        {
+            "name": "updated-melemele",
+            "url": "https://pokeapi.co/api/v2/pokedex/22/"
+        },
+        {
+            "name": "updated-akala",
+            "url": "https://pokeapi.co/api/v2/pokedex/23/"
+        },
+        {
+            "name": "updated-ulaula",
+            "url": "https://pokeapi.co/api/v2/pokedex/24/"
+        },
+        {
+            "name": "updated-poni",
+            "url": "https://pokeapi.co/api/v2/pokedex/25/"
+        },
+        {
+            "name": "letsgo-kanto",
+            "url": "https://pokeapi.co/api/v2/pokedex/26/"
+        },
+        {
+            "name": "galar",
+            "url": "https://pokeapi.co/api/v2/pokedex/27/"
+        },
+        {
+            "name": "isle-of-armor",
+            "url": "https://pokeapi.co/api/v2/pokedex/28/"
+        },
+        {
+            "name": "crown-tundra",
+            "url": "https://pokeapi.co/api/v2/pokedex/29/"
+        },
+        {
+            "name": "hisui",
+            "url": "https://pokeapi.co/api/v2/pokedex/30/"
+        }
+    ]
+}

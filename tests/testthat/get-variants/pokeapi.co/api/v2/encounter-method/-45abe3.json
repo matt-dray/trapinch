@@ -1,0 +1,131 @@
+{
+    "count": 31,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "name": "walk",
+            "url": "https://pokeapi.co/api/v2/encounter-method/1/"
+        },
+        {
+            "name": "old-rod",
+            "url": "https://pokeapi.co/api/v2/encounter-method/2/"
+        },
+        {
+            "name": "good-rod",
+            "url": "https://pokeapi.co/api/v2/encounter-method/3/"
+        },
+        {
+            "name": "super-rod",
+            "url": "https://pokeapi.co/api/v2/encounter-method/4/"
+        },
+        {
+            "name": "surf",
+            "url": "https://pokeapi.co/api/v2/encounter-method/5/"
+        },
+        {
+            "name": "rock-smash",
+            "url": "https://pokeapi.co/api/v2/encounter-method/6/"
+        },
+        {
+            "name": "headbutt",
+            "url": "https://pokeapi.co/api/v2/encounter-method/7/"
+        },
+        {
+            "name": "dark-grass",
+            "url": "https://pokeapi.co/api/v2/encounter-method/8/"
+        },
+        {
+            "name": "grass-spots",
+            "url": "https://pokeapi.co/api/v2/encounter-method/9/"
+        },
+        {
+            "name": "cave-spots",
+            "url": "https://pokeapi.co/api/v2/encounter-method/10/"
+        },
+        {
+            "name": "bridge-spots",
+            "url": "https://pokeapi.co/api/v2/encounter-method/11/"
+        },
+        {
+            "name": "super-rod-spots",
+            "url": "https://pokeapi.co/api/v2/encounter-method/12/"
+        },
+        {
+            "name": "surf-spots",
+            "url": "https://pokeapi.co/api/v2/encounter-method/13/"
+        },
+        {
+            "name": "yellow-flowers",
+            "url": "https://pokeapi.co/api/v2/encounter-method/14/"
+        },
+        {
+            "name": "purple-flowers",
+            "url": "https://pokeapi.co/api/v2/encounter-method/15/"
+        },
+        {
+            "name": "red-flowers",
+            "url": "https://pokeapi.co/api/v2/encounter-method/16/"
+        },
+        {
+            "name": "rough-terrain",
+            "url": "https://pokeapi.co/api/v2/encounter-method/17/"
+        },
+        {
+            "name": "gift",
+            "url": "https://pokeapi.co/api/v2/encounter-method/18/"
+        },
+        {
+            "name": "gift-egg",
+            "url": "https://pokeapi.co/api/v2/encounter-method/19/"
+        },
+        {
+            "name": "only-one",
+            "url": "https://pokeapi.co/api/v2/encounter-method/20/"
+        },
+        {
+            "name": "pokeflute",
+            "url": "https://pokeapi.co/api/v2/encounter-method/21/"
+        },
+        {
+            "name": "headbutt-low",
+            "url": "https://pokeapi.co/api/v2/encounter-method/22/"
+        },
+        {
+            "name": "headbutt-normal",
+            "url": "https://pokeapi.co/api/v2/encounter-method/23/"
+        },
+        {
+            "name": "headbutt-high",
+            "url": "https://pokeapi.co/api/v2/encounter-method/24/"
+        },
+        {
+            "name": "squirt-bottle",
+            "url": "https://pokeapi.co/api/v2/encounter-method/25/"
+        },
+        {
+            "name": "wailmer-pail",
+            "url": "https://pokeapi.co/api/v2/encounter-method/26/"
+        },
+        {
+            "name": "seaweed",
+            "url": "https://pokeapi.co/api/v2/encounter-method/27/"
+        },
+        {
+            "name": "roaming-grass",
+            "url": "https://pokeapi.co/api/v2/encounter-method/28/"
+        },
+        {
+            "name": "roaming-water",
+            "url": "https://pokeapi.co/api/v2/encounter-method/29/"
+        },
+        {
+            "name": "devon-scope",
+            "url": "https://pokeapi.co/api/v2/encounter-method/30/"
+        },
+        {
+            "name": "feebas-tile-fishing",
+            "url": "https://pokeapi.co/api/v2/encounter-method/31/"
+        }
+    ]
+}

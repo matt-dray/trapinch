@@ -7,7 +7,7 @@
 API by PokéAPI \url{https://pokeapi.co/}. Data from The Pokémon Company.
 }
 \usage{
-get_growth_rate(resource)
+get_growth_rate(resource = NULL)
 }
 \arguments{
 \item{resource}{Character or numeric. The name or ID of the resource to

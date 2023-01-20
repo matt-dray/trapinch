@@ -116,6 +116,7 @@ UBC-MDS](https://github.com/UBC-MDS/pokedex) (not on CRAN).
 # Thanks
 
 This package was made easier with help from [the PokéAPI
-documentation](https://pokeapi.co/docs/v2), [the {httr2}
-documentation](https://httr2.r-lib.org/index.html) and [Colin Fay’s
-post](https://colinfay.me/build-api-wrapper-package-r/).
+documentation](https://pokeapi.co/docs/v2), the [{httr2} package and
+documentation](https://httr2.r-lib.org/index.html), the [{httptest2}
+package and documentation](https://enpiar.com/httptest2/index.html) and
+[Colin Fay’s post](https://colinfay.me/build-api-wrapper-package-r/).
