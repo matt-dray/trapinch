@@ -1,0 +1,97 @@
+{
+    "count": 30,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/1/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/2/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/3/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/4/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/5/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/6/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/7/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/8/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/9/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/10/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/11/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/12/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/13/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/14/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/15/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/16/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/17/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/18/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/19/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/20/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/21/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/22/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/23/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/24/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/25/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/26/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/27/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/28/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/29/"
+        },
+        {
+            "url": "https://pokeapi.co/api/v2/characteristic/30/"
+        }
+    ]
+}

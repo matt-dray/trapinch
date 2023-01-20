@@ -1,14 +1,14 @@
-.check_internet <- function() {
-
-  if (!curl::has_internet()) {
-    stop("Please check your internet connection.", call. = FALSE)
-  }
-
-}
+# .check_internet <- function() {
+#
+#   if (!curl::has_internet()) {
+#     stop("Please check your internet connection.", call. = FALSE)
+#   }
+#
+# }
 
 .check_args <- function(endpoint, resource, ext, verbose) {
 
-  if (!is.character(endpoint) | is.na(endpoint)) {
+  if (is.null(endpoint) || !is.character(endpoint) || is.na(endpoint)) {
     stop(
       "Argument 'endpoint' must be a valid string. ",
       "See names(trapinch::resource_lookups) for all available endpoints.",
@@ -16,10 +16,11 @@
   }
 
   if (
-    is.na(resource) ||
+    !is.null(resource) &&
+    (is.na(resource) ||
     (!(is.character(resource) | is.numeric(resource))) ||
     (is.character(resource) &
-     endpoint %in% c("contest-effect", "evolution-chain", "machine", "characteristic"))
+     endpoint %in% c("contest-effect", "evolution-chain", "machine", "characteristic")))
     ) {
     stop(
       "Argument 'resource' must be a valid numeric or character value ",
@@ -31,13 +32,14 @@
   }
 
   if (
-    is.na(resource) ||
+    !is.na(ext) &&
     (!is.null(ext) && !is.character(ext)) ||
     (!is.null(ext) && (endpoint == "type" & ext != "encounters"))
   ) {
     stop(
-      "Argument 'ext' can only be used with endpoint 'pokemon' ",
-      "where it should only be set to the string 'encounters'.",
+      "Argument 'ext' can only be NULL, or the string 'encounters' if used ",
+      "with endpoint 'pokemon' and a valid resource. See ",
+      "trapinch::resource_lookups('pokemon') for valid resources.",
       call. = FALSE
     )
   }
@@ -66,6 +68,7 @@
   }
 
   if (
+    !is.null("resource") &&
     (is.numeric(resource) && !resource %in% endpoint_table[["id"]]) ||
     (is.character(resource) && !resource %in% endpoint_table[["name"]])
   ) {
