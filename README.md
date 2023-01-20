@@ -37,7 +37,8 @@ remotes::install_github("matt-dray/trapinch")
 Functions are all prefaced `get_*()` and return a list. The generic
 request function is `get_pokeapi()`, to which you can provide an
 `endpoint` and `resource` of interest. Each endpoint also has its own
-function to which you need only supply the resource of interest.
+function to which you need only supply the resource of interest, like
+`get_pokemon()` or `get_type()`.
 
 For example, retrieve a named Pokémon’s details:
 
@@ -60,30 +61,30 @@ them in the `resource_lookups` list object. The endpoints:
 
 ``` r
 names(trapinch::resource_lookups)
-#>  [1] "berry"                     "berry-firmness"           
-#>  [3] "berry-flavor"              "contest-type"             
-#>  [5] "contest-effect"            "super-contest-effect"     
-#>  [7] "encounter-method"          "encounter-condition"      
-#>  [9] "encounter-condition-value" "evolution-chain"          
-#> [11] "evolution-trigger"         "generation"               
-#> [13] "pokedex"                   "version"                  
-#> [15] "version-group"             "item"                     
-#> [17] "item-attribute"            "item-category"            
-#> [19] "item-fling-effect"         "item-pocket"              
-#> [21] "location"                  "location-area"            
-#> [23] "pal-park-area"             "region"                   
-#> [25] "machine"                   "item-pocket"              
+#>  [1] "ability"                   "berry"                    
+#>  [3] "berry-firmness"            "berry-flavor"             
+#>  [5] "characteristic"            "contest-effect"           
+#>  [7] "contest-type"              "egg-group"                
+#>  [9] "encounter-condition"       "encounter-condition-value"
+#> [11] "encounter-method"          "evolution-chain"          
+#> [13] "evolution-trigger"         "gender"                   
+#> [15] "generation"                "growth-rate"              
+#> [17] "item"                      "item-attribute"           
+#> [19] "item-category"             "item-fling-effect"        
+#> [21] "item-pocket"               "language"                 
+#> [23] "location"                  "location-area"            
+#> [25] "machine"                   "move"                     
 #> [27] "move-ailment"              "move-battle-style"        
 #> [29] "move-category"             "move-damage-class"        
 #> [31] "move-learn-method"         "move-target"              
-#> [33] "ability"                   "characteristic"           
-#> [35] "egg-group"                 "gender"                   
-#> [37] "growth-rate"               "nature"                   
-#> [39] "pokeathlon-stat"           "pokemon"                  
-#> [41] "pokemon-color"             "pokemon-form"             
-#> [43] "pokemon-habitat"           "pokemon-shape"            
-#> [45] "pokemon-species"           "stat"                     
-#> [47] "type"                      "language"
+#> [33] "nature"                    "pal-park-area"            
+#> [35] "pokeathlon-stat"           "pokedex"                  
+#> [37] "pokemon"                   "pokemon-color"            
+#> [39] "pokemon-form"              "pokemon-habitat"          
+#> [41] "pokemon-shape"             "pokemon-species"          
+#> [43] "region"                    "stat"                     
+#> [45] "super-contest-effect"      "type"                     
+#> [47] "version"                   "version-group"
 ```
 
 And an example resource table for Pokémon types:

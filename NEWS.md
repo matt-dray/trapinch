@@ -7,3 +7,4 @@
 * Added GitHub Actions for check and tests.
 * Added hex.
 * Added `resource_lookup` data and checks.
+* Limited request to resource count for given endpoint.

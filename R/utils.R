@@ -1,88 +1,86 @@
 .check_internet <- function() {
 
   if (!curl::has_internet()) {
-    stop("Please check your internet connection", call. = FALSE)
+    stop("Please check your internet connection.", call. = FALSE)
   }
 
 }
 
 .check_args <- function(endpoint, resource, ext, verbose) {
 
-  if (!is.character(endpoint)) {
+  if (!is.character(endpoint) | is.na(endpoint)) {
     stop(
-      "Argument 'endpoint' must be a string. ",
-      "Run names(resource_lookups) for available endpoints.",
+      "Argument 'endpoint' must be a valid string. ",
+      "See names(trapinch::resource_lookups) for all available endpoints.",
       call. = FALSE)
   }
 
-  if (!(is.character(resource) | is.numeric(resource))) {
+  if (
+    is.na(resource) ||
+    (!(is.character(resource) | is.numeric(resource))) ||
+    (is.character(resource) &
+     endpoint %in% c("contest-effect", "evolution-chain", "machine", "characteristic"))
+    ) {
     stop(
-      "Argument 'resource' must be a valid numeric or character value for the endpoint '",
-      endpoint, "'. See resource_lookups[['", endpoint, "']] for details.",
+      "Argument 'resource' must be a valid numeric or character value ",
+      "for the endpoint '", endpoint, "'. See ",
+      "trapinch::resource_lookups[['", endpoint, "']] ",
+      "for all endpoints and resources.",
       call. = FALSE
     )
   }
 
   if (
-    is.character(resource) &
-    endpoint %in% c("contest-effect", "evolution-chain", "machine", "characteristic")
+    is.na(resource) ||
+    (!is.null(ext) && !is.character(ext)) ||
+    (!is.null(ext) && (endpoint == "type" & ext != "encounters"))
   ) {
     stop(
-      "Argument 'resource' must be a valid numeric value for the endpoint '",
-      endpoint, "'. See resource_lookups[['", endpoint, "']] for details.",
-      call. = FALSE
-    )
-  }
-
-  if (!is.null(ext) && !is.character(ext)) {
-    stop(
       "Argument 'ext' can only be used with endpoint 'pokemon' ",
-      "and it must be set to 'encounter'.",
-      call. = FALSE
-    )
-  }
-
-  if (!is.null(ext) && (endpoint == "type" & ext != "encounters")) {
-    stop(
-      "Argument 'ext' can only be used with endpoint 'pokemon' ",
-      "and it must be set to 'encounter'.",
+      "where it should only be set to the string 'encounters'.",
       call. = FALSE
     )
   }
 
   if (!is.logical(verbose)) {
-    stop("Argument 'verbose' must be logical, i.e. TRUE or FALSE.")
+    stop(
+      "Argument 'verbose' must be logical, i.e. TRUE or FALSE.",
+      call. = FALSE)
   }
 
 }
 
-.check_resource_exists <- function(endpoint, resource) {
+.check_endpoint_exists <- function(endpoint, resource) {
 
   endpoint_table <- trapinch::resource_lookups[[endpoint]]
 
-  if (is.numeric(resource)) {
+  if (is.null(endpoint_table)) {
 
-    if (!resource %in% endpoint_table[["id"]]) {
-      stop(
-        "The resource ID you provided, '", resource,
-        "' is not valid for the endpoint '", endpoint,
-        "'. See resource_lookups[['", endpoint, "']] for details.",
-        call. = FALSE
-      )
-    }
+    stop(
+      "The endpoint name you provided, '", endpoint,
+      "', is not valid. See names(trapinch::resource_lookups) ",
+      "for all available endpoints.",
+      call. = FALSE
+    )
 
   }
 
-  if (is.character(resource)) {
+  if (
+    (is.numeric(resource) && !resource %in% endpoint_table[["id"]]) ||
+    (is.character(resource) && !resource %in% endpoint_table[["name"]])
+  ) {
 
-    if (!resource %in% endpoint_table[["name"]]) {
-      stop(
-        "The resource name you provided, '", resource,
-        "' is not valid for the endpoint '", endpoint,
-        "'. See resource_lookups[['", endpoint, "']] for details.",
-        call. = FALSE
-      )
-    }
+    type <- if(is.numeric(resource)) "id" else "name"
+
+    stop(
+      "The resource ", type, " you provided, '", resource,
+      "', is not valid for the endpoint '", endpoint,
+      "'. See trapinch::resource_lookups[['", endpoint, "']] ",
+      "for all available endpoints and resources.",
+      call. = FALSE
+    )
+
   }
+
 
 }

@@ -15,6 +15,10 @@ test_that("argument 'resource' errors", {
 
 })
 
+test_that("non-existent endpoint errors", {
+  expect_error(get_pokeapi(endpoint = "x", resource = "ditto"))
+})
+
 test_that("non-existent resource errors", {
   expect_error(get_pokeapi(endpoint = "berry", resource = Inf))
   expect_error(get_pokeapi(endpoint = "berry", resource = "x"))

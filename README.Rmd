@@ -36,7 +36,7 @@ remotes::install_github("matt-dray/trapinch")
 
 ## Example
 
-Functions are all prefaced `get_*()` and return a list. The generic request function is `get_pokeapi()`, to which you can provide an `endpoint` and `resource` of interest. Each endpoint also has its own function to which you need only supply the resource of interest.
+Functions are all prefaced `get_*()` and return a list. The generic request function is `get_pokeapi()`, to which you can provide an `endpoint` and `resource` of interest. Each endpoint also has its own function to which you need only supply the resource of interest, like `get_pokemon()` or `get_type()`.
 
 For example, retrieve a named Pokémon's details:
 
