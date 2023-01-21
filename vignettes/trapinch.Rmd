@@ -1,0 +1,90 @@
+---
+title: "trapinch"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{trapinch}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+# library(httptest2)
+# start_vignette("vignette-trapinch")
+```
+
+## The API
+
+The package uses version 2 of [the PokéAPI API]().
+
+No authorisation is required to use the API.
+
+Results are paged, but {trapinch} functions request the total number of resources for each requested endpoint or resource.
+
+## Functions
+
+There are three main function types in {trapinch}:
+
+1. `get_pokeapi()` is a low-level function that allows the user to pass an `endpoint` and `resource` (and possibly an extra parameter, `ext`) to the API, returning a list of data.
+2. The remaining `get_*()` functions, such as `get_pokemon()` and `get_item()`, are higher-level functions that pass an endpoint automatically to `get_pokeapi()` on your behalf. There's one of these functions for every endpoint.
+3. The `clear_cache()` function removes any cached files (RDS), which are stored in the directory resolved by `tools::R_user_dir()` on your machine.
+
+## Resources
+
+The built-in dataset `resource_lookups` is a named list where each element is an endpoint. Each element contains a data.frame that has a row per resource that's available from that endpoint, plus columns for the ID (numeric) and name (character) that can be passed to the `resource` argument of the `get_*()` functions. There's also a URL column that shows the full API path to each resource.
+
+## Request format
+
+Calls to the API are in the form https://pokeapi.co/api/v2/{endpoint}/{resource}. The `get_pokeapi()` function simplifies this to `get_pokeapi(endpoint, resource)`.
+
+There's one case that extends the path to https://pokeapi.co/api/v2/{endpoint}/{resource}/{ext}, which is only required , for Pokémon encounters data: https://pokeapi.co/api/v2//pokemon/{resource}/encounters. This is expressed with an extra argument, `ext` to `get_pokeapi()`.
+
+An empty call returns all resources for the given endpoint.
+
+## Caching
+
+Calls are cached in the directory resolved by `tools::R_user_dir(, which = "cache")` on your machine. The data returned from the first call to the API is cached; the data is retrieved from that cache when that same request is made again.
+
+You can delete the cached files with the `clear_cache()` function.
+
+## Last request and response
+
+You can get meta-information about the last request and response with and  `httr2::last_response()`.
+
+```{r}
+trapinch::get_move_battle_style("attack")
+```
+
+The `httr2::last_request()` function returns information like the full GET request, user-agent string and cache path: 
+
+```{r eval=FALSE}
+httr2::last_request()
+#> <httr2_request>
+#> GET https://pokeapi.co/api/v2/move-battle-style/attack/?limit=3
+#> Body: empty
+#> Options:
+#> • useragent: 'trapinch (http://github.com/matt-dray/trapinch)'
+#> Policies:
+#> • cache_path: '/Users/matt.dray/Library/Caches/org.R-project.R/R/trapinch'
+#> • cache_use_on_error: FALSE
+#> • cache_debug: FALSE
+```
+
+The `httr2::last_response()` function returns information like the status and content type:
+
+```{r eval=FALSE}
+httr2::last_response()
+#> <httr2_response>
+#> GET https://pokeapi.co/api/v2/move-battle-style/attack/?limit=3
+#> Status: 200 OK
+#> Content-Type: application/json
+#> Body: In memory (213 bytes)
+```
+
+```{r, include=FALSE}
+# end_vignette()
+```

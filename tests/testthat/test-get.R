@@ -124,3 +124,14 @@ with_mock_dir("get-variants", {
     expect_type(get_version_group(), "list")
   })
 })
+
+
+test_that("cache clear returns message", {
+
+  expect_message(clear_cache())
+
+  test <- "x"
+  save(test, file = file.path(tools::R_user_dir("trapinch", "cache"), "test.rds"))
+  expect_message(clear_cache())
+
+})
