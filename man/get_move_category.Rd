@@ -28,6 +28,7 @@ Note that the 'trapinch' package uses version 2 of the API. See
 \href{https://pokeapi.co/docs/v2}{the PokéAPI documentation} for more
 information and a full list of endpoints and resources. You can also view
 the built-in \code{\link{resource_lookups}} data for this information.
+Results are cached.
 }
 \examples{
 \dontrun{get_move_category("ailment")}

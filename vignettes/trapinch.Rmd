@@ -32,6 +32,9 @@ There's one case, for Pokémon encounters data, that extends the path to {base U
 
 An empty call returns all resources for the given endpoint.
 
+Calls are cached in the directory resolved by `tools::R_user_dir(, which = "cache")` on your machine. The data returned from the first call to the API is cached; the data is retrieved from that cache when that same request is made again.
+
+
 ```{r, include=FALSE}
 end_vignette()
 ```

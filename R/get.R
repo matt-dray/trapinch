@@ -19,6 +19,7 @@
 #'     \href{https://pokeapi.co/docs/v2}{the PokéAPI documentation} for more
 #'     information and a full list of endpoints and resources. You can also view
 #'     the built-in \code{\link{resource_lookups}} data for this information.
+#'     Results are cached.
 #'
 #' @return A list. The exact contents depend on the endpoint and resource being
 #'     requested
@@ -45,7 +46,8 @@ get_pokeapi <- function(
 
   request <- httr2::request(base) |>
     httr2::req_url_path_append(endpoint, resource, ext) |>
-    httr2::req_url_query(limit = resource_count)
+    httr2::req_url_query(limit = resource_count) |>
+    httr2::req_cache(tools::R_user_dir("trapinch", which = "cache"))
 
   if (verbose) {
     request <- httr2::req_verbose(request)
