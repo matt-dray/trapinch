@@ -1,0 +1,37 @@
+---
+title: "trapinch"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{trapinch}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+library(httptest2)
+start_vignette("readme")
+```
+
+```{r setup}
+library(trapinch)
+```
+
+
+Calls are in the form {base URL}/{endpoint}/{resource}. 
+
+No authorisation is required to use the API.
+
+Results are paged, but the {trapinch} package requests all resources for a given endpoint at once.
+
+There's one case, for Pokémon encounters data, that extends the path to {base URL}/{endpoint}/{resource}/{ext}, which can only be used in the form {base URL}/pokemon/{resource}/encounters.
+
+An empty call returns all resources for the given endpoint.
+
+```{r, include=FALSE}
+end_vignette()
+```

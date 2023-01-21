@@ -1,0 +1,15 @@
+{
+    "flavor_text_entries": [
+        {
+            "language": {
+                "name": "en",
+                "url": "https://pokeapi.co/api/v2/language/9/"
+            },
+            "text": "A tool used for\ncatching wild\nPOKéMON.",
+            "version_group": {
+                "name": "ruby-sapphire",
+                "url": "https://pokeapi.co/api/v2/version-group/5/"
+            }
+        }
+    ]
+}
