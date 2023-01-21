@@ -13,7 +13,7 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 coverage](https://codecov.io/gh/matt-dray/trapinch/branch/main/graph/badge.svg)](https://app.codecov.io/gh/matt-dray/trapinch?branch=main)
 <!-- badges: end -->
 
-An R package to interface with [the PokéAPI
+A work-in-progress R package to interface with [the PokéAPI
 service](https://pokeapi.co/), based on
 [{httr2}](https://httr2.r-lib.org/).
 
@@ -100,23 +100,23 @@ head(trapinch::resource_lookups[["type"]])
 #> 6  6     rock https://pokeapi.co/api/v2/type/6/
 ```
 
-# Expectations
-
-I’m developing {trapinch} to familiarise myself with {httr2}, API
-handling and unit testing of functions that talk to the internet. Expect
-a lot of change, but it might not get updated much or often.
+See [the PokéAPI documentation](https://pokeapi.co/docs/v2) for full
+details of what can be returned.
 
 # Similar projects
 
 Wrappers in several languages are named on [the PokéAPI
 website](https://pokeapi.co/docs/v2#wrap). None of these are for R,
 although I’m aware of [{pokedex} from
-UBC-MDS](https://github.com/UBC-MDS/pokedex) (not on CRAN).
+UBC-MDS](https://github.com/UBC-MDS/pokedex) (not on CRAN), which has a
+limited set of functions.
 
 # Thanks
 
-This package was made easier with help from [the PokéAPI
-documentation](https://pokeapi.co/docs/v2), the [{httr2} package and
-documentation](https://httr2.r-lib.org/index.html), the [{httptest2}
-package and documentation](https://enpiar.com/httptest2/index.html) and
-[Colin Fay’s post](https://colinfay.me/build-api-wrapper-package-r/).
+This package was made easier with help from the:
+
+- [PokéAPI documentation](https://pokeapi.co/docs/v2)
+- [{httr2} documentation](https://httr2.r-lib.org/index.html)
+- [{httptest2} documentation](https://enpiar.com/httptest2/index.html)
+- [HTTP Testing book](https://books.ropensci.org/http-testing/) from
+  rOpenSci
