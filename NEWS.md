@@ -8,3 +8,6 @@
 * Added hex.
 * Added `resource_lookup` data and checks.
 * Limited request to resource count for given endpoint.
+* Added caching and `clear_cache()`.
+* Added draft vignette.
+
