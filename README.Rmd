@@ -37,6 +37,8 @@ if (!require(remotes)) install.packages("remotes")
 remotes::install_github("matt-dray/trapinch")
 ```
 
+The package depends on R version 4.1 since it uses `R_user_dir()` and the base pipe, `|>`.
+
 ## Example
 
 Functions are all prefaced `get_*()` and return a list. The generic request function is `get_pokeapi()`, to which you can provide an `endpoint` and `resource` of interest. Each endpoint also has its own function to which you need only supply the resource of interest, like `get_pokemon()` or `get_type()`.

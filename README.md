@@ -32,6 +32,9 @@ if (!require(remotes)) install.packages("remotes")
 remotes::install_github("matt-dray/trapinch")
 ```
 
+The package depends on R version 4.1 since it uses `R_user_dir()` and
+the base pipe, `|>`.
+
 ## Example
 
 Functions are all prefaced `get_*()` and return a list. The generic
