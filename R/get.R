@@ -47,14 +47,14 @@ get_pokeapi <- function(
   request <- httr2::request(base) |>
     httr2::req_url_path_append(endpoint, resource, ext) |>
     httr2::req_url_query(limit = resource_count) |>
-    httr2::req_cache(tools::R_user_dir("trapinch", which = "cache"))
+    httr2::req_cache(tools::R_user_dir("trapinch", which = "cache")) |>
+    httr2::req_user_agent(agent)
 
   if (verbose) {
     request <- httr2::req_verbose(request)
   }
 
   request |>
-    httr2::req_user_agent(agent) |>
     httr2::req_perform() |>
     httr2::resp_body_json()
 

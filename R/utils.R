@@ -18,10 +18,10 @@
   if (
     !is.null(resource) &&
     (is.na(resource) ||
-    (!(is.character(resource) | is.numeric(resource))) ||
-    (is.character(resource) &
-     endpoint %in% c("contest-effect", "evolution-chain", "machine", "characteristic")))
-    ) {
+     (!(is.character(resource) | is.numeric(resource))) ||
+     (is.character(resource) &
+      endpoint %in% c("contest-effect", "evolution-chain", "machine", "characteristic")))
+  ) {
     stop(
       "Argument 'resource' must be a valid numeric or character value ",
       "for the endpoint '", endpoint, "'. See ",
@@ -87,3 +87,5 @@
 
 
 }
+
+
