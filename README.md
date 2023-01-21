@@ -107,9 +107,9 @@ details of what can be returned.
 
 Wrappers in several languages are named on [the PokéAPI
 website](https://pokeapi.co/docs/v2#wrap). None of these are for R,
-although I’m aware of [{pokedex} from
-UBC-MDS](https://github.com/UBC-MDS/pokedex) (not on CRAN), which has a
-limited set of functions.
+although I’m aware of smaller-scale, more-focused code like [UBC-MDS’s
+{pokedex}](https://github.com/UBC-MDS/pokedex) and [Eva Nguyen’s
+{pokeWrapper}](https://nguyeneva.github.io/2020-02-06-rwrapper/).
 
 # Thanks
 
