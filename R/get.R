@@ -36,7 +36,7 @@ get_pokeapi <- function(
     verbose = FALSE
 ) {
 
-  # .check_internet()
+  .check_internet()
   .check_args(endpoint, resource, ext, verbose)
   .check_endpoint_exists(endpoint, resource)
 
