@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 
 ## The API
 
-The package uses version 2 of [the PokéAPI API]().
+The package uses version 2 of [the PokéAPI API](https://pokeapi.co/).
 
 No authorisation is required to use the API.
 
@@ -53,10 +53,10 @@ You can delete the cached files with the `clear_cache()` function.
 
 ## Last request and response
 
-You can get meta-information about the last request and response with and  `httr2::last_response()`.
+You can get meta-information about the last request and response with `httr2::last_request()` and `httr2::last_response()`. Here's an example call:
 
-```{r}
-trapinch::get_move_battle_style("attack")
+```{r eval=FALSE}
+atk <- trapinch::get_move_battle_style("attack")
 ```
 
 The `httr2::last_request()` function returns information like the full GET request, user-agent string and cache path: 

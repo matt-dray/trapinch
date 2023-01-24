@@ -1,12 +1,17 @@
-# .check_internet <- function() {
-#
-#   if (!curl::has_internet()) {
-#     stop("Please check your internet connection.", call. = FALSE)
-#   }
-#
-# }
+.is_internet_down <- function() {
 
-.check_args <- function(endpoint, resource, ext, verbose) {
+  # See Maëlle's post:
+  # https://blog.r-hub.io/2023/01/23/code-switch-escape-hatch-test/
+
+  if (nzchar(Sys.getenv("TRAPINCH.NOINTERNET"))) {
+    return(TRUE)
+  }
+
+  !curl::has_internet()
+
+}
+
+.check_args <- function(endpoint, resource, ext) {
 
   if (is.null(endpoint) || !is.character(endpoint) || is.na(endpoint)) {
     stop(
@@ -42,12 +47,6 @@
       "trapinch::resource_lookups('pokemon') for valid resources.",
       call. = FALSE
     )
-  }
-
-  if (!is.logical(verbose)) {
-    stop(
-      "Argument 'verbose' must be logical, i.e. TRUE or FALSE.",
-      call. = FALSE)
   }
 
 }

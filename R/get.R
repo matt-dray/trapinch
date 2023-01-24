@@ -12,8 +12,6 @@
 #' @param ext Character. Further extension to the provided endpoint and
 #'     resource. Defaults to \code{NULL}. Only used for the 'pokemon' endpoint
 #'     to find Pokémon encounters.
-#' @param verbose Logical. Show extra API-related output when request is
-#'     performed? Defaults to \code{FALSE}.
 #'
 #' @details Note that the 'trapinch' package uses version 2 of the API. See
 #'     \href{https://pokeapi.co/docs/v2}{the PokéAPI documentation} for more
@@ -29,32 +27,24 @@
 #' @export
 #'
 #' @examples \dontrun{get_pokeapi("pokemon", "bulbasaur")}
-get_pokeapi <- function(
-    endpoint,
-    resource = NULL,
-    ext = NULL,
-    verbose = FALSE
-) {
+get_pokeapi <- function(endpoint, resource = NULL, ext = NULL) {
 
-  # .check_internet()
-  .check_args(endpoint, resource, ext, verbose)
+  if (.is_internet_down()) {
+    message("Please check your internet connection.")
+  }
+
+  .check_args(endpoint, resource, ext)
   .check_endpoint_exists(endpoint, resource)
 
   base <- "https://pokeapi.co/api/v2/"
   agent <- "trapinch (http://github.com/matt-dray/trapinch)"
   resource_count <- nrow(trapinch::resource_lookups[[endpoint]])
 
-  request <- httr2::request(base) |>
+  httr2::request(base) |>
     httr2::req_url_path_append(endpoint, resource, ext) |>
     httr2::req_url_query(limit = resource_count) |>
     httr2::req_cache(tools::R_user_dir("trapinch", which = "cache")) |>
-    httr2::req_user_agent(agent)
-
-  if (verbose) {
-    request <- httr2::req_verbose(request)
-  }
-
-  request |>
+    httr2::req_user_agent(agent) |>
     httr2::req_perform() |>
     httr2::resp_body_json()
 

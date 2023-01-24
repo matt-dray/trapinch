@@ -1,3 +1,19 @@
+with_mock_dir("no-internet", {
+  test_that("no internet is reported", {
+
+    # See Maëlle's post:
+    # https://blog.r-hub.io/2023/01/23/code-switch-escape-hatch-test/
+
+    withr::local_envvar("TRAPINCH.NOINTERNET" = "x")
+
+    expect_message(
+      get_pokeapi("move-battle-style"),
+      "Please check your internet connection."
+    )
+
+  })
+})
+
 with_mock_dir("endpoint", {
   test_that("argument 'endpoint' works correctly", {
 
@@ -53,20 +69,6 @@ with_mock_dir("ext", {
     expect_error(get_pokeapi(endpoint = "pokemon", resource = "mew", ext = 1))
     expect_error(get_pokeapi(endpoint = "pokemon", resource = "mew", ext = NA_character_))
     expect_error(get_pokeapi(endpoint = "berry",   resource = "mew", ext = "encounters"))
-
-  })
-})
-
-with_mock_dir("verbose", {
-  test_that("argument 'verbose' works correctly", {
-
-    expect_type(get_pokeapi(endpoint = "move-battle-style", verbose = TRUE), "list")
-    expect_length(get_pokeapi(endpoint = "move-battle-style", verbose = TRUE), 4)
-
-    expect_error(get_pokeapi(endpoint = "pokemon", resource = "mew", verbose = 1))
-    expect_error(get_pokeapi(endpoint = "pokemon", resource = "mew", verbose = "x"))
-    expect_error(get_pokeapi(endpoint = "pokemon", resource = "mew", verbose = NULL))
-    expect_error(get_pokeapi(endpoint = "pokemon", resource = "mew", verbose = NA_character_))
 
   })
 })
