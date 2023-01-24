@@ -27,18 +27,13 @@
 #' @export
 #'
 #' @examples \dontrun{get_pokeapi("pokemon", "bulbasaur")}
-get_pokeapi <- function(
-    endpoint,
-    resource = NULL,
-    ext = NULL,
-    verbose = FALSE
-) {
+get_pokeapi <- function(endpoint, resource = NULL, ext = NULL) {
 
   if (.is_internet_down()) {
     message("Please check your internet connection.")
   }
 
-  .check_args(endpoint, resource, ext, verbose)
+  .check_args(endpoint, resource, ext)
   .check_endpoint_exists(endpoint, resource)
 
   base <- "https://pokeapi.co/api/v2/"

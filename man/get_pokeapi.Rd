@@ -7,7 +7,7 @@
 API by PokéAPI \url{https://pokeapi.co/}. Data from The Pokémon Company.
 }
 \usage{
-get_pokeapi(endpoint, resource = NULL, ext = NULL, verbose = FALSE)
+get_pokeapi(endpoint, resource = NULL, ext = NULL)
 }
 \arguments{
 \item{endpoint}{Character. The name of the endpoint to query. This includes

@@ -11,7 +11,7 @@
 
 }
 
-.check_args <- function(endpoint, resource, ext, verbose) {
+.check_args <- function(endpoint, resource, ext) {
 
   if (is.null(endpoint) || !is.character(endpoint) || is.na(endpoint)) {
     stop(
@@ -47,12 +47,6 @@
       "trapinch::resource_lookups('pokemon') for valid resources.",
       call. = FALSE
     )
-  }
-
-  if (!is.logical(verbose)) {
-    stop(
-      "Argument 'verbose' must be logical, i.e. TRUE or FALSE.",
-      call. = FALSE)
   }
 
 }
