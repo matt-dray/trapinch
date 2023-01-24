@@ -36,7 +36,10 @@ get_pokeapi <- function(
     verbose = FALSE
 ) {
 
-  .check_internet()
+  if (.is_internet_down()) {
+    message("Please check your internet connection.")
+  }
+
   .check_args(endpoint, resource, ext, verbose)
   .check_endpoint_exists(endpoint, resource)
 

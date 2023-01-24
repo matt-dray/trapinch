@@ -1,8 +1,13 @@
-.check_internet <- function() {
+.is_internet_down <- function() {
 
-  if (!curl::has_internet()) {
-    stop("Please check your internet connection.", call. = FALSE)
+  # See Maëlle's post:
+  # https://blog.r-hub.io/2023/01/23/code-switch-escape-hatch-test/
+
+  if (nzchar(Sys.getenv("TRAPINCH.NOINTERNET"))) {
+    return(TRUE)
   }
+
+  !curl::has_internet()
 
 }
 

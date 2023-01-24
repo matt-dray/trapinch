@@ -1,3 +1,17 @@
+test_that("no internet is reported", {
+
+  # See Maëlle's post:
+  # https://blog.r-hub.io/2023/01/23/code-switch-escape-hatch-test/
+
+  withr::local_envvar("TRAPINCH.NOINTERNET" = "x")
+
+  expect_message(
+    get_pokeapi("move-battle-style"),
+    "Please check your internet connection."
+  )
+
+})
+
 with_mock_dir("endpoint", {
   test_that("argument 'endpoint' works correctly", {
 
