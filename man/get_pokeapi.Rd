@@ -23,9 +23,6 @@ details.}
 \item{ext}{Character. Further extension to the provided endpoint and
 resource. Defaults to \code{NULL}. Only used for the 'pokemon' endpoint
 to find Pokémon encounters.}
-
-\item{verbose}{Logical. Show extra API-related output when request is
-performed? Defaults to \code{FALSE}.}
 }
 \value{
 A list. The exact contents depend on the endpoint and resource being
