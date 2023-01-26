@@ -39,13 +39,15 @@ get_pokeapi <- function(endpoint, resource = NULL, ext = NULL) {
   base <- "https://pokeapi.co/api/v2/"
   agent <- "trapinch (http://github.com/matt-dray/trapinch)"
   resource_count <- nrow(trapinch::resource_lookups[[endpoint]])
+  cache <- tools::R_user_dir("trapinch", which = "cache")
 
   httr2::request(base) |>
     httr2::req_url_path_append(endpoint, resource, ext) |>
     httr2::req_url_query(limit = resource_count) |>
-    httr2::req_cache(tools::R_user_dir("trapinch", which = "cache")) |>
+    httr2::req_cache(cache) |>
     httr2::req_user_agent(agent) |>
     httr2::req_perform() |>
+    httr2::resp_retry(max_tries = 3) |>
     httr2::resp_body_json()
 
 }
