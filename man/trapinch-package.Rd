@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-Query the RESTful PokéAPI <https://pokeapi.co/> to return information about the Pokémon game franchise, including moves, berries, items, locations, etc.
+Query version 2 of the RESTful PokéAPI <https://pokeapi.co/> to return information about the Pokémon game franchise, including moves, berries, items, locations, etc.
 }
 \seealso{
 Useful links:
