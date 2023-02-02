@@ -1,4 +1,4 @@
-# trapinch 0.0.0.9000
+# trapinch 0.0.1
 
 * Set up package.
 * Added `get_*()` functions.
