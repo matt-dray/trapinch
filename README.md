@@ -5,9 +5,10 @@
 
 <!-- badges: start -->
 
-[![Project Status: WIP – Initial development is in progress, but there
-has not yet been a stable, usable release suitable for the
-public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Project Status: Inactive – The project has reached a stable, usable
+state but is no longer being actively developed; support/maintenance
+will be provided as time
+allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 [![R-CMD-check](https://github.com/matt-dray/trapinch/workflows/R-CMD-check/badge.svg)](https://github.com/matt-dray/trapinch/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/matt-dray/trapinch/branch/main/graph/badge.svg)](https://app.codecov.io/gh/matt-dray/trapinch?branch=main)
@@ -15,7 +16,7 @@ coverage](https://codecov.io/gh/matt-dray/trapinch/branch/main/graph/badge.svg)]
 post](https://img.shields.io/badge/rostrum.blog-post-008900?labelColor=000000&logo=data%3Aimage%2Fgif%3Bbase64%2CR0lGODlhEAAQAPEAAAAAABWCBAAAAAAAACH5BAlkAAIAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAEAAQAAAC55QkISIiEoQQQgghRBBCiCAIgiAIgiAIQiAIgSAIgiAIQiAIgRAEQiAQBAQCgUAQEAQEgYAgIAgIBAKBQBAQCAKBQEAgCAgEAoFAIAgEBAKBIBAQCAQCgUAgEAgCgUBAICAgICAgIBAgEBAgEBAgEBAgECAgICAgECAQIBAQIBAgECAgICAgICAgECAQECAQICAgICAgICAgEBAgEBAgEBAgICAgICAgECAQIBAQIBAgECAgICAgIBAgECAQECAQIBAgICAgIBAgIBAgEBAgECAgECAgICAgICAgECAgECAgQIAAAQIKAAAh%2BQQJZAACACwAAAAAEAAQAAAC55QkIiESIoQQQgghhAhCBCEIgiAIgiAIQiAIgSAIgiAIQiAIgRAEQiAQBAQCgUAQEAQEgYAgIAgIBAKBQBAQCAKBQEAgCAgEAoFAIAgEBAKBIBAQCAQCgUAgEAgCgUBAICAgICAgIBAgEBAgEBAgEBAgECAgICAgECAQIBAQIBAgECAgICAgICAgECAQECAQICAgICAgICAgEBAgEBAgEBAgICAgICAgECAQIBAQIBAgECAgICAgIBAgECAQECAQIBAgICAgIBAgIBAgEBAgECAgECAgICAgICAgECAgECAgQIAAAQIKAAA7)](https://www.rostrum.blog/2023/02/02/trapinch/)
 <!-- badges: end -->
 
-A work-in-progress R package to interface with [the PokéAPI
+A simple R package to interface with [the PokéAPI
 service](https://pokeapi.co/), based on
 [{httr2}](https://httr2.r-lib.org/).
 
@@ -37,7 +38,7 @@ remotes::install_github("matt-dray/trapinch")
 The package depends on R version 4.1 since it uses `R_user_dir()` and
 the base pipe, `|>`.
 
-## Example
+## Examples
 
 Functions are all prefaced `get_*()` and return a list. The generic
 request function is `get_pokeapi()`, to which you can provide an
@@ -111,10 +112,17 @@ details of what can be returned.
 # Similar projects
 
 Wrappers in several languages are named on [the PokéAPI
-website](https://pokeapi.co/docs/v2#wrap). None of these are for R,
-although I’m aware of smaller-scale, more-focused code like [UBC-MDS’s
-{pokedex}](https://github.com/UBC-MDS/pokedex) and [Eva Nguyen’s
-{pokeWrapper}](https://nguyeneva.github.io/2020-02-06-rwrapper/).
+website](https://pokeapi.co/docs/v2#wrap), but none are for R. I did
+find a couple of smaller-scale, non-{httr2} packages on GitHub:
+[UBC-MDS’s {pokedex}](https://github.com/UBC-MDS/pokedex) and [Eva
+Nguyen’s
+{pokeWrapper}](https://nguyeneva.github.io/2020-02-06-rwrapper/). I had,
+however,
+[overlooked](https://fosstodon.org/@ashbaldry/109806406291422128) an
+important one: [Ash Baldry](https://ashbaldry.github.io/) has already
+written the [{pokeapi} package](https://github.com/ashbaldry/pokeapi),
+which uses {httr2} and was released several months prior to {trapinch}.
+Whoops!
 
 # Thanks
 
